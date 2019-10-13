@@ -1,0 +1,20 @@
+<div class="product-display"> 
+    Hello ProductDisplayComponent! 
+
+
+        <span *ngIf="productList.length > 0; else emptyContents"></span>
+        <div>
+            <table>
+                <tr *ngFor="let item of productList">
+                    <td>{{item.ProductName}}</td>
+                    <td>{{item.UnitPrice}}</td>
+                    <td><button type="button" class="btn btn-primary" (click)="selectedProduct(item)">Select Product</button></td>
+                </tr>
+            </table>
+        </div>
+    
+        <ng-template #emptyContents>
+            No items in array
+        </ng-template>
+
+</div>

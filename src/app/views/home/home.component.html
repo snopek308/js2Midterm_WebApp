@@ -1,0 +1,30 @@
+<!-- https://v2.clarity.design/grid -->
+<div class="clr-row"> 
+    <div class="clr-col-6">
+        {{homeTitle}} Page
+    </div>
+</div>
+<div class="clr-row">
+    <div class="clr-col-6">
+        <span *ngIf="homeTitle === 'Home'">Show Me</span>
+        <span *ngIf="homeTitle !== 'Home'">Show Me</span>
+    </div>
+    <div class="clr-col-6">
+        <span>product selected: {{product?.ProductName}}</span>
+    </div>
+</div>
+<app-product-display class="row" [products]="items" (productSelected)="productSelected($event)"></app-product-display>
+
+
+
+
+
+<!-- <span *ngIf="items.length > 0; else emptyContents"></span>
+<span *ngFor="let item of items">
+    {{item.name}}
+    {{item.value}}
+</span>
+
+<ng-template #emptyContents>
+    No items in array
+</ng-template> -->
