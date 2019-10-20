@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
- 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database'; 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
@@ -12,6 +14,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductDisplayComponent } from './components/product-display/product-display.component';
 import { DataRepositoryService } from './service/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AboutMeComponent } from './views/about-me/about-me.component';
+import { ShopComponent } from './views/shop/shop.component';
+import { NewsletterComponent } from './views/newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
@@ -20,17 +27,23 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ErrorComponent,
     FooterComponent,
-    ProductDisplayComponent
+    ProductDisplayComponent,
+    AboutMeComponent,
+    ShopComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [
-    DataRepositoryService
+    DataRepositoryService,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

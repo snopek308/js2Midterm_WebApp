@@ -1,20 +1,23 @@
-<div class="product-display"> 
-    Hello ProductDisplayComponent! 
-
-
-        <span *ngIf="productList.length > 0; else emptyContents"></span>
-        <div>
-            <table>
-                <tr *ngFor="let item of productList">
-                    <td>{{item.ProductName}}</td>
-                    <td>{{item.UnitPrice}}</td>
-                    <td><button type="button" class="btn btn-primary" (click)="selectedProduct(item)">Select Product</button></td>
-                </tr>
-            </table>
+<div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-4 clr-col-xl-3" *ngFor="let item of productList">
+    <!--Block Element and Modifer naming conventions-->
+    <div class="product-wrapper">
+        <div class="product-item">
+            <div class="product-item__image">
+                <img class="product-img" src="{{item.productPhoto}}" />
+            </div>
+            <div class="product-item__name">
+                <span>{{item.productName}}</span>
+            </div>
+            <div class="product-item__actions">
+                <div>
+                    <span class="action-count">{{item.likes}}</span>
+                    <clr-icon shape="heart" class="is-solid is-highlight" title="likes"></clr-icon>
+                </div>
+                <div>
+                    <span class="action-count">{{item.views}}</span>
+                    <clr-icon shape="eye" class="is-solid is-highlight" title="views"></clr-icon>
+                </div>
+            </div>
         </div>
-    
-        <ng-template #emptyContents>
-            No items in array
-        </ng-template>
-
+    </div>
 </div>
