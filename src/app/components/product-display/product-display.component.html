@@ -1,15 +1,15 @@
-<div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-4 clr-col-xl-3" *ngFor="let item of productList">
+<div class="clr-col-sm-12 clr-col-md-6 clr-col-lg-4 clr-col-xl-3" *ngFor="let item of productList; let i = index">
     <!--Block Element and Modifer naming conventions-->
     <div class="product-wrapper">
         <div class="product-item">
             <div class="product-item__image">
-                <img class="product-img" src="{{item.productPhoto}}" />
+                <img class="product-img" src="{{item.productPhoto}}" alt="" (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
             </div>
             <div class="product-item__name">
                 <span>{{item.productName}}</span>
             </div>
             <div class="product-item__actions">
-                <div>
+                <div (click)="productAction($event, item, 'likes')">
                     <span class="action-count">{{item.likes}}</span>
                     <clr-icon shape="heart" class="is-solid is-highlight" title="likes"></clr-icon>
                 </div>

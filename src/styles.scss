@@ -11,3 +11,29 @@
     margin: 0 auto;
     padding: 0 1em;
 }
+
+.d-flex {
+    display: flex;
+
+    &__row{
+        flex-direction: row;
+    }
+
+    &__center-end{
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+}
+
+.mt {
+    &-1{
+        margin-top: 1em;
+    }
+}
+
+.mb {
+    &-1{
+        margin-bottom: 1em;
+    }
+}

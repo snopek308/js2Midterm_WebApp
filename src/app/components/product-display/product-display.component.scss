@@ -7,6 +7,18 @@
     height: auto;
 }
 
+.product-item__name {
+    font-weight: 600;
+    padding: .15em 0;
+}
+
 .action-count{
     padding-right: 5px;
+}
+
+.product-item__actions{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
 }

@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
 	// public zzz: any[];
 
 	// initialized variable
+	public openDropdown: boolean = false;
 	public items: any[] = [];
 	public product: any;
 	public products: Observable<any[]>;
@@ -29,7 +30,6 @@ export class HomeComponent implements OnInit {
 
 	ngOnInit() { 
 		this.getDisplayProducts();
-
 	}
 
 	getDisplayProducts(){
@@ -42,6 +42,26 @@ export class HomeComponent implements OnInit {
 		});
 	}
 
+	productSelected(data: any){
+		console.log(data);
+		if(data.type === "views"){
+			this.db.collection('/products').doc(data.item.productID).update({
+				"views": data.item.views += 1
+			}).then(() => {
+				this.getDisplayProducts();
+			})
+
+		}else{
+			this.db.collection('/products').doc(data.item.productID).update({
+				"likes": data.item.likes += 1
+			}).then(() => {
+				this.getDisplayProducts();
+			})
+
+		}
+
+	}
+
 	getProductFromExternalDB(){
 	// // using service imported through dbi
 		// this.dataService.getRequest('/product').subscribe((result: any) => {
@@ -51,11 +71,40 @@ export class HomeComponent implements OnInit {
 		// 	console.log(error);
 		// });
 	}
+
+	sendFilterQuery(type: any){
+		this.toggleFilterBtn();
+		switch(type){
+			case 0:
+				this.products = this.db.collection('products', ref => ref.orderBy('productName', 'asc')).valueChanges();
+				this.applyProductsToList(this.products);
+				break;
+			case 1:
+				this.products = this.db.collection('products', ref => ref.orderBy('productName', 'desc')).valueChanges();
+				this.applyProductsToList(this.products);
+				break;
+			case 2:
+				this.products = this.db.collection('products', ref => ref.orderBy('likes', 'desc')).valueChanges();
+				this.applyProductsToList(this.products);
+				break;
+			case 3:
+				this.products = this.db.collection('products', ref => ref.orderBy('views', 'desc')).valueChanges();
+				this.applyProductsToList(this.products);
+				break;
+		}
+	}
+
+	applyProductsToList(products: Observable<any>){
+		products.subscribe((result: any) => {
+			console.log(result);
+			this.items = result;
+		}, (error: any) => {
+			console.log(error);
+		});
+	}
 	
-	productSelected(data: any){
-		console.log('productSelected passed from child to view');
-		console.log(data);
-		this.product = data;
+	toggleFilterBtn(){
+		this.openDropdown = !this.openDropdown;
 	}
 
 
