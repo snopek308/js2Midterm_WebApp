@@ -1,6 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { product } from 'src/app/models/product.model';
 import { Lightbox } from 'ngx-lightbox';
+import { NgRedux } from '@angular-redux/store';
+import { IAppState } from 'src/app/store/store';
+import { ReduxStoreActions } from 'src/app/store/actions';
 
 @Component({
 	selector: 'app-product-display',
@@ -15,7 +18,7 @@ export class ProductDisplayComponent implements OnInit, OnChanges {
 	@Input() products: any[];
 	@Output() productSelected: EventEmitter<any> = new EventEmitter();
 
-	constructor(private _lightbox: Lightbox){}
+	constructor(private _lightbox: Lightbox, public ngRedux: NgRedux<IAppState>){}
 
 	ngOnInit() { }
 
@@ -47,5 +50,9 @@ export class ProductDisplayComponent implements OnInit, OnChanges {
 
 	openLightbox(item: product, index: number){
 		this._lightbox.open(this.productList, index);
+	}
+
+	addProductToCart(item: product){
+		this.ngRedux.dispatch({type: ReduxStoreActions.AddToCart, product: item});
 	}
 }

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database'; 
 import { LightboxModule } from 'ngx-lightbox';
@@ -20,6 +20,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { AboutMeComponent } from './views/about-me/about-me.component';
 import { ShopComponent } from './views/shop/shop.component';
 import { NewsletterComponent } from './views/newsletter/newsletter.component';
+import { IAppState, rootReducer, InitialState } from './store/store';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { createLogger } from 'redux-logger';
+import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +36,16 @@ import { NewsletterComponent } from './views/newsletter/newsletter.component';
     ProductDisplayComponent,
     AboutMeComponent,
     ShopComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ClarityModule,
+    NgReduxModule,
     HttpClientModule,
+    CommonModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
@@ -45,8 +53,15 @@ import { NewsletterComponent } from './views/newsletter/newsletter.component';
   ],
   providers: [
     DataRepositoryService,
-    AngularFirestore
+    AngularFirestore,
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(public ngRedux: NgRedux<IAppState>){
+    let logger = [createLogger()];
+    ngRedux.configureStore(rootReducer, InitialState, logger);
+  }
+}

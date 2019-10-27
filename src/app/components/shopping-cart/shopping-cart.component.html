@@ -1,0 +1,5 @@
+<div class="shopping-cart" *ngIf="showCart | async">
+    <div *ngFor="let item of cartItems | async">
+        {{item.productName}}
+    </div>
+</div>

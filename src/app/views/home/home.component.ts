@@ -36,7 +36,10 @@ export class HomeComponent implements OnInit {
 		this.products = this.db.collection('/products').valueChanges();
 		this.products.subscribe((result: any) => {
 			console.log(result);
-			this.items = result;
+			this.items = result.map(item => {
+				item.cartQty = 0;
+				return item;
+			});
 		}, (error: any) => {
 			console.log(error);
 		});

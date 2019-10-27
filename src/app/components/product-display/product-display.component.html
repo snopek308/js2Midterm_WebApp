@@ -7,16 +7,18 @@
             </div>
             <div class="product-item__name">
                 <span>{{item.productName}}</span>
+                <span><clr-icon shape="shopping-bag" class="is-solid is-highlight" (click)="addProductToCart(item)"></clr-icon></span>
             </div>
             <div class="product-item__actions">
-                <div (click)="productAction($event, item, 'likes')">
+                    
+                <!-- <div (click)="productAction($event, item, 'likes')">
                     <span class="action-count">{{item.likes}}</span>
                     <clr-icon shape="heart" class="is-solid is-highlight" title="likes"></clr-icon>
                 </div>
                 <div>
                     <span class="action-count">{{item.views}}</span>
                     <clr-icon shape="eye" class="is-solid is-highlight" title="views"></clr-icon>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

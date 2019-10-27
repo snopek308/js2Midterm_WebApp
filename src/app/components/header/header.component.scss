@@ -18,3 +18,14 @@
 .nav-link{
     color: #333 !important;
 }
+
+.header-cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+}
+
+span.cart-qty{
+    color: red;
+}

@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-redux/store": "^10.0.0",
     "@angular/animations": "~8.2.9",
     "@angular/common": "~8.2.9",
     "@angular/compiler": "~8.2.9",
@@ -25,8 +26,13 @@
     "@clr/ui": "^2.2.2",
     "@webcomponents/custom-elements": "^1.0.0",
     "firebase": "^7.2.1",
+    "ng2-redux": "^5.1.2",
     "ngx-lightbox": "^2.1.1",
+    "redux": "~4.0.0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
     "rxjs": "~6.4.0",
+    "tassign": "^1.0.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
