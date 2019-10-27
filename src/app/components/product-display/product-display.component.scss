@@ -5,6 +5,7 @@
 .product-img{
     width: 100%;
     height: auto;
+    min-height: 160px;
 }
 
 .product-item__name {
@@ -25,4 +26,13 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-between;
+}
+
+.product-item__image {
+    max-height: 160px;
+    overflow: hidden;
+}
+
+.product-item {
+    margin: 1.5em 0;
 }

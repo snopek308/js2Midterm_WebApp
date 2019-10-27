@@ -1,5 +1,24 @@
 <div class="shopping-cart" *ngIf="showCart | async">
-    <div *ngFor="let item of cartItems | async">
-        {{item.productName}}
+    <div class="shopping-cart__list">
+        <ul class="list-items">
+            <li class="list-item" *ngFor="let item of cartItems | async">
+                <div class="list-item__namePrice">
+                    <div class="d-flex d-flex__center-sb product-info">
+                        <span>{{item.productName}}</span> 
+                        <span>{{item.productPrice}}</span>
+                    </div>
+                    <div>
+                        <span>QTY: {{item.cartQty}}</span>
+                    </div>
+                </div>
+                <div class="list-item__desc">
+                    <span>{{item.productDescription}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="shopping-cart__actions">
+            <button *ngIf="cartItems.length > 0" class="btn btn-primary btn-block" (click)="clearCart()">Purchase</button>
     </div>
 </div>
+

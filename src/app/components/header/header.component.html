@@ -1,6 +1,6 @@
 <div class="header header-6">
     <div class="branding">
-        <img class="brand-logo" src="./../../../assets/img/logoLense.PNG" />
+        <img class="brand-logo" src="./assets/img/logoLense.PNG" />
     </div>
     <div class="header-actions">
         <a routerLink="/home" class="nav-link nav-text">Home</a>
@@ -8,6 +8,7 @@
         <a routerLink="/newsletter" class="nav-link nav-text">Newsletter</a>
     </div>
     <div class="header-cart" (click)="toggleCart()">
+        <app-shopping-cart></app-shopping-cart>
         <span class="cart-qty">{{cartQty | async}}</span>
         <clr-icon shape="shopping-cart" size="18" class="is-highlight"></clr-icon>
     </div>

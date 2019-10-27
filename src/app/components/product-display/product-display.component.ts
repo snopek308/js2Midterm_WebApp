@@ -24,7 +24,7 @@ export class ProductDisplayComponent implements OnInit, OnChanges {
 
 	ngOnChanges(){
 		this.productList = this.products.map(i =>{
-			i.src = i.productPhoto;
+			i.src = './' + i.productPhoto;
 			i.caption = i.productDescription;
 			return i;
 		})

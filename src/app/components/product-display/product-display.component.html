@@ -3,7 +3,7 @@
     <div class="product-wrapper">
         <div class="product-item">
             <div class="product-item__image">
-                <img class="product-img" src="{{item.productPhoto}}" alt="" (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
+                <img class="product-img" src="./{{item.productPhoto}}" alt="" (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
             </div>
             <div class="product-item__name">
                 <span>{{item.productName}}</span>

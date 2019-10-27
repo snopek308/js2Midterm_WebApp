@@ -47,21 +47,21 @@ export class HomeComponent implements OnInit {
 
 	productSelected(data: any){
 		console.log(data);
-		if(data.type === "views"){
-			this.db.collection('/products').doc(data.item.productID).update({
-				"views": data.item.views += 1
-			}).then(() => {
-				this.getDisplayProducts();
-			})
+		// if(data.type === "views"){
+		// 	this.db.collection('/products').doc(data.item.productID).update({
+		// 		"views": data.item.views += 1
+		// 	}).then(() => {
+		// 		this.getDisplayProducts();
+		// 	})
 
-		}else{
-			this.db.collection('/products').doc(data.item.productID).update({
-				"likes": data.item.likes += 1
-			}).then(() => {
-				this.getDisplayProducts();
-			})
+		// }else{
+		// 	this.db.collection('/products').doc(data.item.productID).update({
+		// 		"likes": data.item.likes += 1
+		// 	}).then(() => {
+		// 		this.getDisplayProducts();
+		// 	})
 
-		}
+		// }
 
 	}
 

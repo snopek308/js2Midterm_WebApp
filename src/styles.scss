@@ -10,6 +10,7 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 1em;
+    overflow-x: hidden;
 }
 
 .d-flex {
@@ -22,6 +23,10 @@
     &__center-end{
         align-items: center;
         justify-content: flex-end;
+    }
+    &__center-sb{
+        align-items: center;
+        justify-content: space-between;
     }
 
 }
