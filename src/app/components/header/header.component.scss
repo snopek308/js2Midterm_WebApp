@@ -2,6 +2,12 @@
     background: #fff;
     border-bottom: 1px solid #eee;
     margin-bottom: 2em;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    z-index: 1500;
+    top: 0;
+    left: 0;
 }
 
 .header .branding, header .branding {

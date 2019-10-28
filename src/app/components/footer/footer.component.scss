@@ -1,0 +1,26 @@
+.footer {
+
+}
+
+.footer-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.brand-logo-footer{
+    max-height: 80px;
+    width: auto;
+}
+
+footer.app-footer {
+    background: #eee;
+    padding: 1.5em 0;
+}
+
+.footer-nav {
+        list-style: none;
+        & li > a{
+            color: #333;
+        }
+}

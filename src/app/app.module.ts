@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './views/home/home.component';
 import { ErrorComponent } from './views/error/error.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { ProductDisplayComponent } from './components/product-display/product-display.component';
 import { DataRepositoryService } from './service/data.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +24,7 @@ import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { createLogger } from 'redux-logger';
 import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     AboutMeComponent,
     ShopComponent,
     NewsletterComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
