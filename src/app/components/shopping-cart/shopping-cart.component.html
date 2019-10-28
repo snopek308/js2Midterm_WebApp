@@ -18,7 +18,8 @@
         </ul>
     </div>
     <div class="shopping-cart__actions">
-            <button *ngIf="cartItems.length > 0" class="btn btn-primary btn-block" (click)="clearCart()">Purchase</button>
+            <button *ngIf="(cartItems | async).length > 0" class="btn btn-primary btn-block" (click)="clearCart()">Purchase</button>
+            <!-- <button *ngIf="cartItems.length > 0" class="btn btn-primary btn-block" (click)="clearCart()">Purchase</button> -->
     </div>
 </div>
 

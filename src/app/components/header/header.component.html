@@ -1,15 +1,27 @@
+<!-- Code for the Header, as a component, I have the html here, and then I use the 
+app.component.html to place it on my different views in the project. -->
+
 <div class="header header-6">
     <div class="branding">
         <img class="brand-logo" src="./assets/img/TS-Logo-1.png" />
     </div>
     <div class="header-actions">
+        <!--Here is the different way Angular does routing between it's views, 
+        I really like it because it when I read it, I know what a routerLink is without having to think too hard about it-->
         <a routerLink="/home" class="nav-link nav-text">Home</a>
         <a routerLink="/about-me" class="nav-link nav-text">About Me</a>
         <a routerLink="/newsletter" class="nav-link nav-text">Newsletter</a>
     </div>
+    <!--This is the just the code for the display of the shopping cart but not the actual shopping cart itself
+    I have the class of "is-highlight" because the website I'm redoing uses a lot of blue. I wanted a more clean and 
+    sleek website, but wanted to honor the blue in mine.-->
     <div class="header-cart" (click)="toggleCart()">
         <app-shopping-cart></app-shopping-cart>
         <span class="cart-qty">{{cartQty | async}}</span>
         <clr-icon shape="shopping-cart" size="18" class="is-highlight"></clr-icon>
     </div>
 </div>
+
+<!--For next time, I would like to incorporate more of the business name bigger in the title. I would also like to 
+add something to tell the customers what they can do on the site, I just don't know how you do that so it doesn't happen everytime
+they come to the website. Some sort of pop-up to what they can do? I'm not sure what, just something.-->

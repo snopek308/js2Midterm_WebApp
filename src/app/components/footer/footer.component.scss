@@ -1,3 +1,10 @@
+// I have a simple footer for this project, but I plan on expanding it for the next project. For
+// some reason when I first did this footer, I broke my website in the worst way> I was getting
+// errors for things I didn't even have in my code. I deleted everything, and started from scratch keeping it
+// super simple.
+
+// In the next project, I would like my footer to look more professional, more information on contacting the company
+// as well as social media links.
 .footer {
 
 }
@@ -14,7 +21,7 @@
 }
 
 footer.app-footer {
-    background: #eee;
+    background: #e6e8eb;
     padding: 1.5em 0;
 }
 
@@ -23,4 +30,4 @@ footer.app-footer {
         & li > a{
             color: #333;
         }
-}
+    }

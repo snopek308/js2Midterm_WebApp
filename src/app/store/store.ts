@@ -48,7 +48,6 @@ export function rootReducer(state: IAppState, action): IAppState{
           state.cart.push(action.product);
         }
 
-      
       return tassign(state, {
         cart: state.cart,
         lastUpdated: new Date()

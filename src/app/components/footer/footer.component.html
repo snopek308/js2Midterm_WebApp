@@ -1,3 +1,5 @@
+<!-- Code for the Footer, as a component, I have the html here, and then I use the 
+app.component.html to place it on my different views in the project. -->
 <footer class="app-footer">
     <div class="footer-wrapper">
         <div class="clr-row">
@@ -6,6 +8,9 @@
             </div>
             <div class="clr-col-sm-12 clr-col-md-12 clr-col-lg-4 clr-col-xl-4">
                 <ul class="footer-nav">
+                    <!-- This is one thing I really like about Angular is how it sets up its
+                    links-instead of href, you use the routerlink to connect to views in your code.
+                    You have to set this up in the app.component.html -->
                     <li>
                         <a routerLink="/home">Home</a>
                     </li>

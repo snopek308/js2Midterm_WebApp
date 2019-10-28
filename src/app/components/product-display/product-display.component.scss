@@ -1,3 +1,8 @@
+//There was a lot of playing with the product-display.component. I wasn't sure how I wanted my pictures. I would eventually
+//really like to attempt masonry with my photos (https://www.sitepoint.com/understanding-masonry-layout/) but I just couldn't 
+//figure it out. It was going to be the last thing I did. I also wanted to figure out Pinterest's newest update, where
+//after you pin something, you actually see it swoosh into your account in the top right corner. I would love to attempt an animation.
+
 .product-display {
 
 }
@@ -21,6 +26,7 @@
     padding-right: 5px;
 }
 
+//flex-direction has become one of my favorite SCSS tools to get my items/text where I wanted them to go
 .product-item__actions{
     display: flex;
     flex-direction: row-reverse;
@@ -35,4 +41,12 @@
 
 .product-item {
     margin: 1.5em 0;
+}
+
+clr-icon.is-solid.is-highlight {
+    cursor: pointer;
+}
+
+img.product-img {
+    cursor: pointer;
 }
