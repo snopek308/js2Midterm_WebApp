@@ -50,14 +50,15 @@ export class ProductDisplayComponent implements OnInit, OnChanges {
 
 	// }
 
-	// productAction(event: any, item: product, type: string){
-	// 	let selection = {
-	// 		event: event, 
-	// 		item: item,
-	// 		type: type
-	// 	};
-	// 	this.productSelected.emit(selection);
-	// }
+	//This function also is part of the Lightbox widget. I did not write this code, it was the widget's code.
+	productAction(event: any, item: product, type: string){
+		let selection = {
+			event: event, 
+			item: item,
+			type: type
+		};
+		this.productSelected.emit(selection);
+	}
 
 	//This is the function is for the Lightbox widget I'm using. It's passing in the product and the index number
 	//while saying open the lightbox of this product from the productList from this index
