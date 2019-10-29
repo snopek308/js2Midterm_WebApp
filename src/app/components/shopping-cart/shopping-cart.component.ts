@@ -9,12 +9,18 @@ import { ReduxStoreActions } from 'src/app/store/actions';
 	styleUrls: ['shopping-cart.component.scss']
 })
 
+//
 export class ShoppingCartComponent implements OnInit {
 
 	@select((s: IAppState) => s.showCart) showCart;
 	@select((s: IAppState) => s.cart) cartItems;
+
 	constructor(public ngRedux: NgRedux<IAppState>){}
+
 	ngOnInit() { }
+
+	//here is the function for clearingcart(). Once again, dispatching this 
+	//information to the state to change it.
 	clearCart(){
 		this.ngRedux.dispatch({type: ReduxStoreActions.ClearCart});
 	}

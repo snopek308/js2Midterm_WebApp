@@ -3,6 +3,8 @@
     <div class="product-wrapper">
         <div class="product-item">
             <div class="product-item__image">
+                <!--Within this is the Function OpenLightbox, which is the action of clicking on this image
+                and then the picture will display at its true size. It will also display its description beneath it-->
                 <img class="product-img" src="./{{item.productPhoto}}" alt={{item.productDescription}} (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
             </div>
             <div class="product-item__name">

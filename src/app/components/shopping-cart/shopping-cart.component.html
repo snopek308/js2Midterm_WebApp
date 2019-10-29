@@ -1,13 +1,25 @@
+<!--So any time you see *ngIf=" | async" its Redux returning the observable angular and processes
+it in the view using the async
+Literally, the Redux Store is "listening" for a change. The Async pipe listens for the change and auto subscribes in the view
+Reference: https://blog.angular-university.io/angular-reactive-templates/-->
+
+<!--Within this shopping cart, you see the html to set-up what the cart will look like. Eventually, I would like this to pull
+up in a new page-like Amazon or Etsy. For this project, I set it up to open up on a click on the shopping cart icon in the nav bar.
+It displays the product, the price, description, and qty. It also displays the Purchase Button.
+In the next project, my goal is to include icons which increase and decrese qty, another button to remove products-->
 <div class="shopping-cart" *ngIf="showCart | async">
     <div class="shopping-cart__list">
         <ul class="list-items">
             <li class="list-item" *ngFor="let item of cartItems | async">
                 <div class="list-item__namePrice">
                     <div class="d-flex d-flex__center-sb product-info">
+                        <!--The {{}} are interpolation. In Angular there are lots of different ways to use them. Here
+                        its saying I want the item in the row in the array and the productName or the productPrice is the array property-->
                         <span>{{item.productName}}</span> 
                         <span>{{item.productPrice}}</span>
                     </div>
                     <div>
+                        <!--Reference for interpolation: https://angular.io/guide/template-syntax-->
                         <span>QTY: {{item.cartQty}}</span>
                     </div>
                 </div>
@@ -17,6 +29,11 @@
             </li>
         </ul>
     </div>
+    <!--This class is the actions of the cart. The only action in the cart currently is the button.
+        It's saying that if the array of cartItems(which Tyler, this array can be found in the cart array in the redux store) 
+        is greater than 0, to display the the purchase button (if not, don't display the button). If the user clicks the button,
+        the function clearCart() will fire. Although at this point, clearCart() is not what I eventually want this button to do, 
+        currently, it makes it looks like the user purchases the photos without actually putting in their info.-->
     <div class="shopping-cart__actions">
             <button *ngIf="(cartItems | async).length > 0" class="btn btn-primary btn-block" (click)="clearCart()">Purchase</button>
             <!-- <button *ngIf="cartItems.length > 0" class="btn btn-primary btn-block" (click)="clearCart()">Purchase</button> -->

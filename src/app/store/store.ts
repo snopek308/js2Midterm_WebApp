@@ -25,12 +25,17 @@ export function rootReducer(state: IAppState, action): IAppState{
         console.log(action);
         console.log(state.cart.length);
         if(state.cart.length > 0){
+          //This was code I had to try and total how many qty were in the cart.
+          //This code blew UP my cart. It was like the fibonacci sequence, everything just kept multipling
+          //I kept checking the console and could see the code was constantly adding, but never the right way
+          //so I commented out and went searching the internet, and reached out for help.
           // state.cart.forEach((item, index) => {
           //   if(item.productID === action.product.productID){
           //     item.cartQty += 1;
           //     state.totalCartQty +=1;
           //   }
           // });  
+          //this is how I ended up putting the qty in front of the shopping cart.
           let product = state.cart.find((x) => x.productID == action.product.productID);
 
           if (product){
