@@ -1,3 +1,6 @@
+//This is the ts page for the whole website. I did not code this, this came with the project
+//when I first created it.
+
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';

@@ -1,3 +1,6 @@
+//This page is the modules used throughout my website. I had to declare everything below-
+//components, modules, and providers and then import in the respective libraries.
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';

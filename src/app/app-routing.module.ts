@@ -6,6 +6,8 @@ import { AboutMeComponent } from './views/about-me/about-me.component';
 import { NewsletterComponent } from './views/newsletter/newsletter.component';
 import { ShopComponent } from './views/shop/shop.component';
 
+//this is where I set up the routes for my website. By creating the paths here
+//I easily could use the RouterLink in the rest of my website.
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,7 +17,7 @@ const routes: Routes = [
   {path: 'shop', component: ShopComponent},
 
 
-  //
+  //This is for the Error page. A user could type in anything and be redirected to this page.
   {path: '**', component: ErrorComponent},
 
 ];
