@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DataRepositoryService {
 
     // TODO - change out for firebase url
-    private apiUrl: string = 'http://northwind.cooneycreative.net'
+    private apiUrl: string = 'AIzaSyDXqAYcerrj3t45L7VXfSMzg7XLtFe_iC0'
 
     constructor(private http: HttpClient){
 

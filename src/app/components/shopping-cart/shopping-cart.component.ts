@@ -9,7 +9,7 @@ import { ReduxStoreActions } from 'src/app/store/actions';
 	styleUrls: ['shopping-cart.component.scss']
 })
 
-//
+//This has to do with the State Management of the Redux Store.
 export class ShoppingCartComponent implements OnInit {
 
 	@select((s: IAppState) => s.showCart) showCart;
