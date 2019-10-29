@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"app\">\n  <app-header></app-header>\n  <router-outlet></router-outlet>\n  <app-footer></app-footer>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--For this page, I had to set up the components for the entire site.\nBy putting the app-header, the router-outlet and app-footer here, these components\nappear on all my views-->\n\n<div id=\"app\">\n  <app-header></app-header>\n  <router-outlet></router-outlet>\n  <app-footer></app-footer>\n</div>");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<footer class=\"app-footer\">\r\n    <div class=\"footer-wrapper\">\r\n        <div class=\"clr-row\">\r\n            <div class=\"clr-col-sm-12 clr-col-md-12 clr-col-lg-4 clr-col-xl-4\">\r\n                <img class=\"brand-logo-footer\" src=\"./assets/img/TS-Logo-1.png\" />\r\n            </div>\r\n            <div class=\"clr-col-sm-12 clr-col-md-12 clr-col-lg-4 clr-col-xl-4\">\r\n                <ul class=\"footer-nav\">\r\n                    <li>\r\n                        <a routerLink=\"/home\">Home</a>\r\n                    </li>\r\n                    <li>\r\n                        <a routerLink=\"/about-me\">About Me</a>\r\n                    </li>\r\n                    <li>\r\n                        <a routerLink=\"/newsletter\">Newsletter</a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"clr-col-12-sm clr-col-12-md clr-col-4-lg clr-col-4-xl\">\r\n\r\n\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Code for the Footer, as a component, I have the html here, and then I use the \r\napp.component.html to place it on my different views in the project. -->\r\n<footer class=\"app-footer\">\r\n    <div class=\"footer-wrapper\">\r\n        <div class=\"clr-row\">\r\n            <div class=\"clr-col-sm-12 clr-col-md-12 clr-col-lg-4 clr-col-xl-4\">\r\n                <img class=\"brand-logo-footer\" src=\"./assets/img/TS-Logo-1.png\" />\r\n            </div>\r\n            <div class=\"clr-col-sm-12 clr-col-md-12 clr-col-lg-4 clr-col-xl-4\">\r\n                <ul class=\"footer-nav\">\r\n                    <!-- This is one thing I really like about Angular is how it sets up its\r\n                    links-instead of href, you use the routerlink to connect to views in your code.\r\n                    You have to set this up in the app.component.html -->\r\n                    <li>\r\n                        <a routerLink=\"/home\">Home</a>\r\n                    </li>\r\n                    <li>\r\n                        <a routerLink=\"/about-me\">About Me</a>\r\n                    </li>\r\n                    <li>\r\n                        <a routerLink=\"/newsletter\">Newsletter</a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n            <div class=\"clr-col-12-sm clr-col-12-md clr-col-4-lg clr-col-4-xl\">\r\n\r\n\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</footer>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header header-6\">\r\n    <div class=\"branding\">\r\n        <img class=\"brand-logo\" src=\"./assets/img/TS-Logo-1.png\" />\r\n    </div>\r\n    <div class=\"header-actions\">\r\n        <a routerLink=\"/home\" class=\"nav-link nav-text\">Home</a>\r\n        <a routerLink=\"/about-me\" class=\"nav-link nav-text\">About Me</a>\r\n        <a routerLink=\"/newsletter\" class=\"nav-link nav-text\">Newsletter</a>\r\n    </div>\r\n    <div class=\"header-cart\" (click)=\"toggleCart()\">\r\n        <app-shopping-cart></app-shopping-cart>\r\n        <span class=\"cart-qty\">{{cartQty | async}}</span>\r\n        <clr-icon shape=\"shopping-cart\" size=\"18\" class=\"is-highlight\"></clr-icon>\r\n    </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Code for the Header, as a component, I have the html here, and then I use the \r\napp.component.html to place it on my different views in the project. -->\r\n\r\n<div class=\"header header-6\">\r\n    <div class=\"branding\">\r\n        <img class=\"brand-logo\" src=\"./assets/img/TS-Logo-1.png\" />\r\n    </div>\r\n    <div class=\"header-actions\">\r\n        <!--Here is the different way Angular does routing between it's views, \r\n        I really like it because it when I read it, I know what a routerLink is without having to think too hard about it-->\r\n        <a routerLink=\"/home\" class=\"nav-link nav-text\">Home</a>\r\n        <a routerLink=\"/about-me\" class=\"nav-link nav-text\">About Me</a>\r\n        <a routerLink=\"/newsletter\" class=\"nav-link nav-text\">Newsletter</a>\r\n    </div>\r\n    <!--This is the just the code for the display of the shopping cart but not the actual shopping cart itself\r\n    I have the class of \"is-highlight\" because the website I'm redoing uses a lot of blue. I wanted a more clean and \r\n    sleek website, but wanted to honor the blue in mine.-->\r\n    <div class=\"header-cart\" (click)=\"toggleCart()\">\r\n        <app-shopping-cart></app-shopping-cart>\r\n        <span class=\"cart-qty\">{{cartQty | async}}</span>\r\n        <clr-icon shape=\"shopping-cart\" size=\"18\" class=\"is-highlight\"></clr-icon>\r\n    </div>\r\n</div>\r\n\r\n<!--For next time, I would like to incorporate more of the business name bigger in the title. I would also like to \r\nadd something to tell the customers what they can do on the site, I just don't know how you do that so it doesn't happen everytime\r\nthey come to the website. Some sort of pop-up to what they can do? I'm not sure what, just something.-->\r\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"clr-col-sm-12 clr-col-md-6 clr-col-lg-4 clr-col-xl-3\" *ngFor=\"let item of productList; let i = index\">\r\n    <!--Block Element and Modifer naming conventions-->\r\n    <div class=\"product-wrapper\">\r\n        <div class=\"product-item\">\r\n            <div class=\"product-item__image\">\r\n                <img class=\"product-img\" src=\"./{{item.productPhoto}}\" alt=\"\" (click)=\"productAction($event, item, 'views'); openLightbox(item, i)\" />\r\n            </div>\r\n            <div class=\"product-item__name\">\r\n                <span>{{item.productName}}</span>\r\n                <span><clr-icon shape=\"shopping-bag\" class=\"is-solid is-highlight\" (click)=\"addProductToCart(item)\"></clr-icon></span>\r\n            </div>\r\n            <div class=\"product-item__actions\">\r\n                    \r\n                <!-- <div (click)=\"productAction($event, item, 'likes')\">\r\n                    <span class=\"action-count\">{{item.likes}}</span>\r\n                    <clr-icon shape=\"heart\" class=\"is-solid is-highlight\" title=\"likes\"></clr-icon>\r\n                </div>\r\n                <div>\r\n                    <span class=\"action-count\">{{item.views}}</span>\r\n                    <clr-icon shape=\"eye\" class=\"is-solid is-highlight\" title=\"views\"></clr-icon>\r\n                </div> -->\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"clr-col-sm-12 clr-col-md-6 clr-col-lg-4 clr-col-xl-3\" *ngFor=\"let item of productList; let i = index\">\r\n    <!--Block Element and Modifer naming conventions-->\r\n    <div class=\"product-wrapper\">\r\n        <div class=\"product-item\">\r\n            <div class=\"product-item__image\">\r\n                <!--Within this is the Function OpenLightbox, which is the action of clicking on this image\r\n                and then the picture will display at its true size. It will also display its description beneath it-->\r\n                <img class=\"product-img\" src=\"./{{item.productPhoto}}\" alt={{item.productDescription}} (click)=\"productAction($event, item, 'views'); openLightbox(item, i)\" />\r\n            </div>\r\n            <div class=\"product-item__name\">\r\n                <span>{{item.productName}}</span>\r\n                <!--This click function adds the product to the arraylist cartItem, passing the item-->\r\n                <span><clr-icon shape=\"shopping-bag\" class=\"is-solid is-highlight\" (click)=\"addProductToCart(item)\"></clr-icon></span>\r\n            </div>\r\n            <div class=\"product-item__actions\">\r\n                    <!--This code was original to the website, I had likes and views. However, due to time constraints,\r\n                    I couldn't get my code to work to push back up to firebase to update the numbers of views\r\n                and likes. You could click on the icons, however, the numbers would disappear once the page would \r\n            refresh. I would like this to work on the next stage of this project.-->\r\n                <!-- <div (click)=\"productAction($event, item, 'likes')\">\r\n                    <span class=\"action-count\">{{item.likes}}</span>\r\n                    <clr-icon shape=\"heart\" class=\"is-solid is-highlight\" title=\"likes\"></clr-icon>\r\n                </div>\r\n                <div>\r\n                    <span class=\"action-count\">{{item.views}}</span>\r\n                    <clr-icon shape=\"eye\" class=\"is-solid is-highlight\" title=\"views\"></clr-icon>\r\n                </div> -->\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"shopping-cart\" *ngIf=\"showCart | async\">\r\n    <div class=\"shopping-cart__list\">\r\n        <ul class=\"list-items\">\r\n            <li class=\"list-item\" *ngFor=\"let item of cartItems | async\">\r\n                <div class=\"list-item__namePrice\">\r\n                    <div class=\"d-flex d-flex__center-sb product-info\">\r\n                        <span>{{item.productName}}</span> \r\n                        <span>{{item.productPrice}}</span>\r\n                    </div>\r\n                    <div>\r\n                        <span>QTY: {{item.cartQty}}</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"list-item__desc\">\r\n                    <span>{{item.productDescription}}</span>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"shopping-cart__actions\">\r\n            <button *ngIf=\"cartItems.length > 0\" class=\"btn btn-primary btn-block\" (click)=\"clearCart()\">Purchase</button>\r\n    </div>\r\n</div>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--So any time you see *ngIf=\" | async\" its Redux returning the observable angular and processes\r\nit in the view using the async\r\nLiterally, the Redux Store is \"listening\" for a change. The Async pipe listens for the change and auto subscribes in the view\r\nReference: https://blog.angular-university.io/angular-reactive-templates/-->\r\n\r\n<!--Within this shopping cart, you see the html to set-up what the cart will look like. Eventually, I would like this to pull\r\nup in a new page-like Amazon or Etsy. For this project, I set it up to open up on a click on the shopping cart icon in the nav bar.\r\nIt displays the product, the price, description, and qty. It also displays the Purchase Button.\r\nIn the next project, my goal is to include icons which increase and decrese qty, another button to remove products-->\r\n<div class=\"shopping-cart\" *ngIf=\"showCart | async\">\r\n    <div class=\"shopping-cart__list\">\r\n        <ul class=\"list-items\">\r\n            <li class=\"list-item\" *ngFor=\"let item of cartItems | async\">\r\n                <div class=\"list-item__namePrice\">\r\n                    <div class=\"d-flex d-flex__center-sb product-info\">\r\n                        <!--The {{}} are interpolation. In Angular there are lots of different ways to use them. Here\r\n                        its saying I want the item in the row in the array and the productName or the productPrice is the array property-->\r\n                        <span>{{item.productName}}</span> \r\n                        <span>{{item.productPrice}}</span>\r\n                    </div>\r\n                    <div>\r\n                        <!--Reference for interpolation: https://angular.io/guide/template-syntax-->\r\n                        <span>QTY: {{item.cartQty}}</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"list-item__desc\">\r\n                    <span>{{item.productDescription}}</span>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n    <!--This class is the actions of the cart. The only action in the cart currently is the button.\r\n        It's saying that if the array of cartItems(which Tyler, this array can be found in the cart array in the redux store) \r\n        is greater than 0, to display the the purchase button (if not, don't display the button). If the user clicks the button,\r\n        the function clearCart() will fire. Although at this point, clearCart() is not what I eventually want this button to do, \r\n        currently, it makes it looks like the user purchases the photos without actually putting in their info.-->\r\n    <div class=\"shopping-cart__actions\">\r\n            <button *ngIf=\"(cartItems | async).length > 0\" class=\"btn btn-primary btn-block\" (click)=\"clearCart()\">Purchase</button>\r\n            <!-- <button *ngIf=\"cartItems.length > 0\" class=\"btn btn-primary btn-block\" (click)=\"clearCart()\">Purchase</button> -->\r\n    </div>\r\n</div>\r\n\r\n");
 
 /***/ }),
 
@@ -408,13 +408,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//this is where I set up the routes for my website. By creating the paths here
+//I easily could use the RouterLink in the rest of my website.
 const routes = [
     { path: '', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'home', component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     { path: 'about-me', component: _views_about_me_about_me_component__WEBPACK_IMPORTED_MODULE_5__["AboutMeComponent"] },
     { path: 'newsletter', component: _views_newsletter_newsletter_component__WEBPACK_IMPORTED_MODULE_6__["NewsletterComponent"] },
     { path: 'shop', component: _views_shop_shop_component__WEBPACK_IMPORTED_MODULE_7__["ShopComponent"] },
-    //
+    //This is for the Error page. A user could type in anything and be redirected to this page.
     { path: '**', component: _views_error_error_component__WEBPACK_IMPORTED_MODULE_4__["ErrorComponent"] },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -439,7 +441,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("body {\n  overflow-x: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNJLGtCQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJib2R5IHtcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcclxufSIsImJvZHkge1xuICBvdmVyZmxvdy14OiBoaWRkZW47XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("body {\n  overflow-x: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNJLGtCQUFBO0FDRkoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL3RoaXMgaXMgdGhlIHNjc3MgcGFnZSBmb3IgdGhlIGVudGlyZSB3ZWJzaXRlLiBUaGUgb25seSB0aGluZyBJIGhhdmUgaW4gaGVyZVxyXG4vL2lzIHRvIGhpZGUgdGhlIHNjcm9sbCBiYXIgYWNyb3NzIHRoZSBib3R0b20gd2hlbiB0aGUgd2Vic2l0ZSBpcyBiZWluZyByZXNpemVkXHJcblxyXG5ib2R5IHtcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcclxufSIsImJvZHkge1xuICBvdmVyZmxvdy14OiBoaWRkZW47XG59Il19 */");
 
 /***/ }),
 
@@ -455,6 +457,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+//this is the app component.ts for the whole website. 
+//the main piece for this page is the creation of the code
+//for the routing for the website. 
 
 
 let AppComponent = class AppComponent {
@@ -513,6 +518,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
 /* harmony import */ var _components_shopping_cart_shopping_cart_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/shopping-cart/shopping-cart.component */ "./src/app/components/shopping-cart/shopping-cart.component.ts");
 /* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/components/footer/footer.component.ts");
+//This page is the modules used throughout my website. I had to declare everything below-
+//components, modules, and providers and then import in the respective libraries.
 
 
 
@@ -599,7 +606,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".footer-wrapper {\n  max-width: 1200px;\n  width: 100%;\n  margin: 0 auto;\n}\n\n.brand-logo-footer {\n  max-height: 80px;\n  width: auto;\n}\n\nfooter.app-footer {\n  background: #eee;\n  padding: 1.5em 0;\n}\n\n.footer-nav {\n  list-style: none;\n}\n\n.footer-nav li > a {\n  color: #333;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxmb290ZXJcXGZvb3Rlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksaUJBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtBQ0hKOztBRE1BO0VBQ0ksZ0JBQUE7RUFDQSxXQUFBO0FDSEo7O0FETUE7RUFDSSxnQkFBQTtFQUNBLGdCQUFBO0FDSEo7O0FETUE7RUFDUSxnQkFBQTtBQ0hSOztBRElRO0VBQ0ksV0FBQTtBQ0ZaIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZvb3RlciB7XG5cbn1cblxuLmZvb3Rlci13cmFwcGVyIHtcbiAgICBtYXgtd2lkdGg6IDEyMDBweDtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBtYXJnaW46IDAgYXV0bztcbn1cblxuLmJyYW5kLWxvZ28tZm9vdGVye1xuICAgIG1heC1oZWlnaHQ6IDgwcHg7XG4gICAgd2lkdGg6IGF1dG87XG59XG5cbmZvb3Rlci5hcHAtZm9vdGVyIHtcbiAgICBiYWNrZ3JvdW5kOiAjZWVlO1xuICAgIHBhZGRpbmc6IDEuNWVtIDA7XG59XG5cbi5mb290ZXItbmF2IHtcbiAgICAgICAgbGlzdC1zdHlsZTogbm9uZTtcbiAgICAgICAgJiBsaSA+IGF7XG4gICAgICAgICAgICBjb2xvcjogIzMzMztcbiAgICAgICAgfVxufVxuIiwiLmZvb3Rlci13cmFwcGVyIHtcbiAgbWF4LXdpZHRoOiAxMjAwcHg7XG4gIHdpZHRoOiAxMDAlO1xuICBtYXJnaW46IDAgYXV0bztcbn1cblxuLmJyYW5kLWxvZ28tZm9vdGVyIHtcbiAgbWF4LWhlaWdodDogODBweDtcbiAgd2lkdGg6IGF1dG87XG59XG5cbmZvb3Rlci5hcHAtZm9vdGVyIHtcbiAgYmFja2dyb3VuZDogI2VlZTtcbiAgcGFkZGluZzogMS41ZW0gMDtcbn1cblxuLmZvb3Rlci1uYXYge1xuICBsaXN0LXN0eWxlOiBub25lO1xufVxuLmZvb3Rlci1uYXYgbGkgPiBhIHtcbiAgY29sb3I6ICMzMzM7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".footer-wrapper {\n  max-width: 1200px;\n  width: 100%;\n  margin: 0 auto;\n}\n\n.brand-logo-footer {\n  max-height: 80px;\n  width: auto;\n}\n\nfooter.app-footer {\n  background: #e6e8eb;\n  padding: 1.5em 0;\n}\n\n.footer-nav {\n  list-style: none;\n}\n\n.footer-nav li > a {\n  color: #333;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxmb290ZXJcXGZvb3Rlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVdBO0VBQ0ksaUJBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtBQ1ZKOztBRGFBO0VBQ0ksZ0JBQUE7RUFDQSxXQUFBO0FDVko7O0FEYUE7RUFDSSxtQkFBQTtFQUNBLGdCQUFBO0FDVko7O0FEYUE7RUFDUSxnQkFBQTtBQ1ZSOztBRFdRO0VBQ0ksV0FBQTtBQ1RaIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gSSBoYXZlIGEgc2ltcGxlIGZvb3RlciBmb3IgdGhpcyBwcm9qZWN0LCBidXQgSSBwbGFuIG9uIGV4cGFuZGluZyBpdCBmb3IgdGhlIG5leHQgcHJvamVjdC4gRm9yXG4vLyBzb21lIHJlYXNvbiB3aGVuIEkgZmlyc3QgZGlkIHRoaXMgZm9vdGVyLCBJIGJyb2tlIG15IHdlYnNpdGUgaW4gdGhlIHdvcnN0IHdheT4gSSB3YXMgZ2V0dGluZ1xuLy8gZXJyb3JzIGZvciB0aGluZ3MgSSBkaWRuJ3QgZXZlbiBoYXZlIGluIG15IGNvZGUuIEkgZGVsZXRlZCBldmVyeXRoaW5nLCBhbmQgc3RhcnRlZCBmcm9tIHNjcmF0Y2gga2VlcGluZyBpdFxuLy8gc3VwZXIgc2ltcGxlLlxuXG4vLyBJbiB0aGUgbmV4dCBwcm9qZWN0LCBJIHdvdWxkIGxpa2UgbXkgZm9vdGVyIHRvIGxvb2sgbW9yZSBwcm9mZXNzaW9uYWwsIG1vcmUgaW5mb3JtYXRpb24gb24gY29udGFjdGluZyB0aGUgY29tcGFueVxuLy8gYXMgd2VsbCBhcyBzb2NpYWwgbWVkaWEgbGlua3MuXG4uZm9vdGVyIHtcblxufVxuXG4uZm9vdGVyLXdyYXBwZXIge1xuICAgIG1heC13aWR0aDogMTIwMHB4O1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIG1hcmdpbjogMCBhdXRvO1xufVxuXG4uYnJhbmQtbG9nby1mb290ZXJ7XG4gICAgbWF4LWhlaWdodDogODBweDtcbiAgICB3aWR0aDogYXV0bztcbn1cblxuZm9vdGVyLmFwcC1mb290ZXIge1xuICAgIGJhY2tncm91bmQ6ICNlNmU4ZWI7XG4gICAgcGFkZGluZzogMS41ZW0gMDtcbn1cblxuLmZvb3Rlci1uYXYge1xuICAgICAgICBsaXN0LXN0eWxlOiBub25lO1xuICAgICAgICAmIGxpID4gYXtcbiAgICAgICAgICAgIGNvbG9yOiAjMzMzO1xuICAgICAgICB9XG4gICAgfSIsIi5mb290ZXItd3JhcHBlciB7XG4gIG1heC13aWR0aDogMTIwMHB4O1xuICB3aWR0aDogMTAwJTtcbiAgbWFyZ2luOiAwIGF1dG87XG59XG5cbi5icmFuZC1sb2dvLWZvb3RlciB7XG4gIG1heC1oZWlnaHQ6IDgwcHg7XG4gIHdpZHRoOiBhdXRvO1xufVxuXG5mb290ZXIuYXBwLWZvb3RlciB7XG4gIGJhY2tncm91bmQ6ICNlNmU4ZWI7XG4gIHBhZGRpbmc6IDEuNWVtIDA7XG59XG5cbi5mb290ZXItbmF2IHtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbn1cbi5mb290ZXItbmF2IGxpID4gYSB7XG4gIGNvbG9yOiAjMzMzO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -615,6 +622,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+// This is the typescript component page of the Footer. When you set this up, you always 
+// import any components you might need. Then you set up your @Component, by listing the metadata
+//selector you are using, and the html and style sheet its attached to.
 
 
 let FooterComponent = class FooterComponent {
@@ -641,7 +651,7 @@ FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".header {\n  background: #fff;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 2em;\n  position: fixed;\n  width: 100%;\n  background: #fff;\n  z-index: 1500;\n  top: 0;\n  left: 0;\n}\n\n.header .branding, header .branding {\n  position: relative;\n}\n\n.brand-logo {\n  max-height: 80px;\n  width: auto;\n  position: fixed;\n  top: 10px;\n}\n\n.nav-link {\n  color: #333 !important;\n}\n\n.header-cart {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 65px;\n}\n\nspan.cart-qty {\n  color: red;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxoZWFkZXJcXGhlYWRlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZ0JBQUE7RUFDQSw2QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtBQ0NKOztBREVBO0VBQ0ksa0JBQUE7QUNDSjs7QURFQTtFQUNJLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxTQUFBO0FDQ0o7O0FERUE7RUFDSSxzQkFBQTtBQ0NKOztBREVBO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxXQUFBO0FDQ0o7O0FERUE7RUFDSSxVQUFBO0FDQ0oiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZGVyIHtcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICAgIG1hcmdpbi1ib3R0b206IDJlbTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICB6LWluZGV4OiAxNTAwO1xuICAgIHRvcDogMDtcbiAgICBsZWZ0OiAwO1xufVxuXG4uaGVhZGVyIC5icmFuZGluZywgaGVhZGVyIC5icmFuZGluZyB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4uYnJhbmQtbG9nb3tcbiAgICBtYXgtaGVpZ2h0OiA4MHB4O1xuICAgIHdpZHRoOiBhdXRvO1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDEwcHg7XG59XG5cbi5uYXYtbGlua3tcbiAgICBjb2xvcjogIzMzMyAhaW1wb3J0YW50O1xufVxuXG4uaGVhZGVyLWNhcnR7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIHdpZHRoOiA2NXB4O1xufVxuXG5zcGFuLmNhcnQtcXR5e1xuICAgIGNvbG9yOiByZWQ7XG59IiwiLmhlYWRlciB7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICBtYXJnaW4tYm90dG9tOiAyZW07XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgd2lkdGg6IDEwMCU7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIHotaW5kZXg6IDE1MDA7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbn1cblxuLmhlYWRlciAuYnJhbmRpbmcsIGhlYWRlciAuYnJhbmRpbmcge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi5icmFuZC1sb2dvIHtcbiAgbWF4LWhlaWdodDogODBweDtcbiAgd2lkdGg6IGF1dG87XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMHB4O1xufVxuXG4ubmF2LWxpbmsge1xuICBjb2xvcjogIzMzMyAhaW1wb3J0YW50O1xufVxuXG4uaGVhZGVyLWNhcnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgd2lkdGg6IDY1cHg7XG59XG5cbnNwYW4uY2FydC1xdHkge1xuICBjb2xvcjogcmVkO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".header {\n  background: #fff;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 2em;\n  position: fixed;\n  width: 100%;\n  background: #fff;\n  z-index: 1500;\n  top: 0;\n  left: 0;\n}\n\n.header .branding, header .branding {\n  position: relative;\n}\n\n.brand-logo {\n  max-height: 80px;\n  width: auto;\n  position: fixed;\n  top: 10px;\n}\n\n.nav-link {\n  color: #333 !important;\n}\n\n.header-cart {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 65px;\n}\n\nspan.cart-qty {\n  color: #0077B8;\n}\n\nclr-icon.is-highlight {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxoZWFkZXJcXGhlYWRlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksZ0JBQUE7RUFDQSw2QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtBQ0hKOztBRE1BO0VBQ0ksa0JBQUE7QUNISjs7QURNQTtFQUNJLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxTQUFBO0FDSEo7O0FETUE7RUFDSSxzQkFBQTtBQ0hKOztBRE1BO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxXQUFBO0FDSEo7O0FET0E7RUFDSSxjQUFBO0FDSko7O0FET0E7RUFDSSxlQUFBO0FDSkoiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL015IGhlYWRlciB3YXMgc2ltcGxpc3RpYy4gSSB3YW50ZWQgaXQgdG8gYmUgY2xlYW4gYW5kIHNpbXBsZS4gV2hlbiBJIGZpcnN0IHN0YXJ0ZWQgYnVpbGRpbmcsIHRoZSBoZWFkZXIgd2FzIGdvaW5nIFxuLy90byBiZSBvbiB0aGUgbGVmdCBzaWRlIGJlZm9yZSBJIG1vdmVkIGl0IGJhY2sgdXAgdG8gdGhlIHRvcC4gSXQgbWlnaHQgcmV0dXJuIHRvIHRoZSBsZWZ0IHNpZGUgZHVyaW5nIHRoZSBzZWNvbmQgXG4vL3BhcnQgb2YgdGhpcyBwcm9qZWN0LlxuXG4uaGVhZGVyIHtcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICAgIG1hcmdpbi1ib3R0b206IDJlbTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICB6LWluZGV4OiAxNTAwO1xuICAgIHRvcDogMDtcbiAgICBsZWZ0OiAwO1xufVxuXG4uaGVhZGVyIC5icmFuZGluZywgaGVhZGVyIC5icmFuZGluZyB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4uYnJhbmQtbG9nb3tcbiAgICBtYXgtaGVpZ2h0OiA4MHB4O1xuICAgIHdpZHRoOiBhdXRvO1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDEwcHg7XG59XG5cbi5uYXYtbGlua3tcbiAgICBjb2xvcjogIzMzMyAhaW1wb3J0YW50O1xufVxuXG4uaGVhZGVyLWNhcnR7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIHdpZHRoOiA2NXB4O1xufVxuXG4vL1xuc3Bhbi5jYXJ0LXF0eXtcbiAgICBjb2xvcjogIzAwNzdCODtcbn1cblxuY2xyLWljb24uaXMtaGlnaGxpZ2h0IHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59IiwiLmhlYWRlciB7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICBtYXJnaW4tYm90dG9tOiAyZW07XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgd2lkdGg6IDEwMCU7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIHotaW5kZXg6IDE1MDA7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbn1cblxuLmhlYWRlciAuYnJhbmRpbmcsIGhlYWRlciAuYnJhbmRpbmcge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi5icmFuZC1sb2dvIHtcbiAgbWF4LWhlaWdodDogODBweDtcbiAgd2lkdGg6IGF1dG87XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMHB4O1xufVxuXG4ubmF2LWxpbmsge1xuICBjb2xvcjogIzMzMyAhaW1wb3J0YW50O1xufVxuXG4uaGVhZGVyLWNhcnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgd2lkdGg6IDY1cHg7XG59XG5cbnNwYW4uY2FydC1xdHkge1xuICBjb2xvcjogIzAwNzdCODtcbn1cblxuY2xyLWljb24uaXMtaGlnaGxpZ2h0IHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufSJdfQ== */");
 
 /***/ }),
 
@@ -659,11 +669,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm2015/angular-redux-store.js");
 /* harmony import */ var src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/store/actions */ "./src/app/store/actions.ts");
+// This is the typescript component page of the Header. When you set this up, you always 
+// import any components you might need. Then you set up your @Component, by listing the metadata
+//selector you are using, and the html and style sheet its attached to.
 
 
 
 
-let HeaderComponent = class HeaderComponent {
+let HeaderComponent = 
+//cartQty is the reference to the cartQty array in the Redux Store
+//Redux allows for easier passing between parent and children. Instead of passing up and down 
+//huge chains of parents and children, Redux is more circular.
+class HeaderComponent {
     constructor(ngRedux) {
         this.ngRedux = ngRedux;
     }
@@ -684,6 +701,9 @@ HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./header.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/header/header.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./header.component.scss */ "./src/app/components/header/header.component.scss")).default]
     })
+    //cartQty is the reference to the cartQty array in the Redux Store
+    //Redux allows for easier passing between parent and children. Instead of passing up and down 
+    //huge chains of parents and children, Redux is more circular.
 ], HeaderComponent);
 
 
@@ -699,7 +719,7 @@ HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".product-img {\n  width: 100%;\n  height: auto;\n  min-height: 160px;\n}\n\n.product-item__name {\n  width: 100%;\n  font-weight: 600;\n  padding: 0.15em 0;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.action-count {\n  padding-right: 5px;\n}\n\n.product-item__actions {\n  display: flex;\n  flex-direction: row-reverse;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.product-item__image {\n  max-height: 160px;\n  overflow: hidden;\n}\n\n.product-item {\n  margin: 1.5em 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxwcm9kdWN0LWRpc3BsYXlcXHByb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvcHJvZHVjdC1kaXNwbGF5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ0hKOztBRE1BO0VBQ0ksV0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtBQ0hKOztBRE1BO0VBQ0ksa0JBQUE7QUNISjs7QURNQTtFQUNJLGFBQUE7RUFDQSwyQkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7QUNISjs7QURNQTtFQUNJLGlCQUFBO0VBQ0EsZ0JBQUE7QUNISjs7QURNQTtFQUNJLGVBQUE7QUNISiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC1kaXNwbGF5L3Byb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wcm9kdWN0LWRpc3BsYXkge1xuXG59XG5cbi5wcm9kdWN0LWltZ3tcbiAgICB3aWR0aDogMTAwJTtcbiAgICBoZWlnaHQ6IGF1dG87XG4gICAgbWluLWhlaWdodDogMTYwcHg7XG59XG5cbi5wcm9kdWN0LWl0ZW1fX25hbWUge1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgcGFkZGluZzogLjE1ZW0gMDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuXG4uYWN0aW9uLWNvdW50e1xuICAgIHBhZGRpbmctcmlnaHQ6IDVweDtcbn1cblxuLnByb2R1Y3QtaXRlbV9fYWN0aW9uc3tcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiByb3ctcmV2ZXJzZTtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLnByb2R1Y3QtaXRlbV9faW1hZ2Uge1xuICAgIG1heC1oZWlnaHQ6IDE2MHB4O1xuICAgIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbi5wcm9kdWN0LWl0ZW0ge1xuICAgIG1hcmdpbjogMS41ZW0gMDtcbn0iLCIucHJvZHVjdC1pbWcge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBtaW4taGVpZ2h0OiAxNjBweDtcbn1cblxuLnByb2R1Y3QtaXRlbV9fbmFtZSB7XG4gIHdpZHRoOiAxMDAlO1xuICBmb250LXdlaWdodDogNjAwO1xuICBwYWRkaW5nOiAwLjE1ZW0gMDtcbiAgZGlzcGxheTogZmxleDtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuXG4uYWN0aW9uLWNvdW50IHtcbiAgcGFkZGluZy1yaWdodDogNXB4O1xufVxuXG4ucHJvZHVjdC1pdGVtX19hY3Rpb25zIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdy1yZXZlcnNlO1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG5cbi5wcm9kdWN0LWl0ZW1fX2ltYWdlIHtcbiAgbWF4LWhlaWdodDogMTYwcHg7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbi5wcm9kdWN0LWl0ZW0ge1xuICBtYXJnaW46IDEuNWVtIDA7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = (".product-img {\n  width: 100%;\n  height: auto;\n  min-height: 160px;\n}\n\n.product-item__name {\n  width: 100%;\n  font-weight: 600;\n  padding: 0.15em 0;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.action-count {\n  padding-right: 5px;\n}\n\n.product-item__actions {\n  display: flex;\n  flex-direction: row-reverse;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.product-item__image {\n  max-height: 160px;\n  overflow: hidden;\n}\n\n.product-item {\n  margin: 1.5em 0;\n}\n\nclr-icon.is-solid.is-highlight {\n  cursor: pointer;\n}\n\nimg.product-img {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxwcm9kdWN0LWRpc3BsYXlcXHByb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvcHJvZHVjdC1kaXNwbGF5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVNBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ1JKOztBRFdBO0VBQ0ksV0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtBQ1JKOztBRFdBO0VBQ0ksa0JBQUE7QUNSSjs7QURZQTtFQUNJLGFBQUE7RUFDQSwyQkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7QUNUSjs7QURZQTtFQUNJLGlCQUFBO0VBQ0EsZ0JBQUE7QUNUSjs7QURZQTtFQUNJLGVBQUE7QUNUSjs7QURZQTtFQUNJLGVBQUE7QUNUSjs7QURZQTtFQUNJLGVBQUE7QUNUSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC1kaXNwbGF5L3Byb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vVGhlcmUgd2FzIGEgbG90IG9mIHBsYXlpbmcgd2l0aCB0aGUgcHJvZHVjdC1kaXNwbGF5LmNvbXBvbmVudC4gSSB3YXNuJ3Qgc3VyZSBob3cgSSB3YW50ZWQgbXkgcGljdHVyZXMuIEkgd291bGQgZXZlbnR1YWxseVxuLy9yZWFsbHkgbGlrZSB0byBhdHRlbXB0IG1hc29ucnkgd2l0aCBteSBwaG90b3MgKGh0dHBzOi8vd3d3LnNpdGVwb2ludC5jb20vdW5kZXJzdGFuZGluZy1tYXNvbnJ5LWxheW91dC8pIGJ1dCBJIGp1c3QgY291bGRuJ3QgXG4vL2ZpZ3VyZSBpdCBvdXQuIEl0IHdhcyBnb2luZyB0byBiZSB0aGUgbGFzdCB0aGluZyBJIGRpZC4gSSBhbHNvIHdhbnRlZCB0byBmaWd1cmUgb3V0IFBpbnRlcmVzdCdzIG5ld2VzdCB1cGRhdGUsIHdoZXJlXG4vL2FmdGVyIHlvdSBwaW4gc29tZXRoaW5nLCB5b3UgYWN0dWFsbHkgc2VlIGl0IHN3b29zaCBpbnRvIHlvdXIgYWNjb3VudCBpbiB0aGUgdG9wIHJpZ2h0IGNvcm5lci4gSSB3b3VsZCBsb3ZlIHRvIGF0dGVtcHQgYW4gYW5pbWF0aW9uLlxuXG4ucHJvZHVjdC1kaXNwbGF5IHtcblxufVxuXG4ucHJvZHVjdC1pbWd7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xuICAgIG1pbi1oZWlnaHQ6IDE2MHB4O1xufVxuXG4ucHJvZHVjdC1pdGVtX19uYW1lIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBmb250LXdlaWdodDogNjAwO1xuICAgIHBhZGRpbmc6IC4xNWVtIDA7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmFjdGlvbi1jb3VudHtcbiAgICBwYWRkaW5nLXJpZ2h0OiA1cHg7XG59XG5cbi8vZmxleC1kaXJlY3Rpb24gaGFzIGJlY29tZSBvbmUgb2YgbXkgZmF2b3JpdGUgU0NTUyB0b29scyB0byBnZXQgbXkgaXRlbXMvdGV4dCB3aGVyZSBJIHdhbnRlZCB0aGVtIHRvIGdvXG4ucHJvZHVjdC1pdGVtX19hY3Rpb25ze1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdy1yZXZlcnNlO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuXG4ucHJvZHVjdC1pdGVtX19pbWFnZSB7XG4gICAgbWF4LWhlaWdodDogMTYwcHg7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLnByb2R1Y3QtaXRlbSB7XG4gICAgbWFyZ2luOiAxLjVlbSAwO1xufVxuXG5jbHItaWNvbi5pcy1zb2xpZC5pcy1oaWdobGlnaHQge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuaW1nLnByb2R1Y3QtaW1nIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59IiwiLnByb2R1Y3QtaW1nIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogYXV0bztcbiAgbWluLWhlaWdodDogMTYwcHg7XG59XG5cbi5wcm9kdWN0LWl0ZW1fX25hbWUge1xuICB3aWR0aDogMTAwJTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgcGFkZGluZzogMC4xNWVtIDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmFjdGlvbi1jb3VudCB7XG4gIHBhZGRpbmctcmlnaHQ6IDVweDtcbn1cblxuLnByb2R1Y3QtaXRlbV9fYWN0aW9ucyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3ctcmV2ZXJzZTtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuXG4ucHJvZHVjdC1pdGVtX19pbWFnZSB7XG4gIG1heC1oZWlnaHQ6IDE2MHB4O1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4ucHJvZHVjdC1pdGVtIHtcbiAgbWFyZ2luOiAxLjVlbSAwO1xufVxuXG5jbHItaWNvbi5pcy1zb2xpZC5pcy1oaWdobGlnaHQge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbmltZy5wcm9kdWN0LWltZyB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn0iXX0= */");
 
 /***/ }),
 
@@ -719,12 +739,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_lightbox__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ngx_lightbox__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm2015/angular-redux-store.js");
 /* harmony import */ var src_app_store_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/store/actions */ "./src/app/store/actions.ts");
+// This is the typescript component page of the Header. When you set this up, you always 
+// import any components you might need. Then you set up your @Component, by listing the metadata
+//selector you are using, and the html and style sheet its attached to.
 
 
 
 
 
 let ProductDisplayComponent = class ProductDisplayComponent {
+    //this is the constructor for lightbox. Lightbox is the widget I found to make my pictures expand in my Home View.
     constructor(_lightbox, ngRedux) {
         this._lightbox = _lightbox;
         this.ngRedux = ngRedux;
@@ -732,6 +756,8 @@ let ProductDisplayComponent = class ProductDisplayComponent {
         this.productSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
     ngOnInit() { }
+    //this function is used to be a defined callback function on each element of an array, 
+    //and returns an array that contains the results
     ngOnChanges() {
         this.productList = this.products.map(i => {
             i.src = './' + i.productPhoto;
@@ -741,11 +767,14 @@ let ProductDisplayComponent = class ProductDisplayComponent {
         console.log('=== ngOnChanges from ProductDisplayComponent ===');
         console.log(this.products);
     }
-    selectedProduct(item) {
-        console.log(item);
-        console.log('item to be passed to parent');
-        this.productSelected.emit(item);
-    }
+    //originally when I was trying to figure out how to pass the product to the parent view, but 
+    //then I switched to using the Redux Store instead.
+    // selectedProduct(item: any){
+    // 	console.log(item);
+    // 	console.log('item to be passed to parent');
+    // 	this.productSelected.emit(item)
+    // }
+    //This function also is part of the Lightbox widget. I did not write this code, it was the widget's code.
     productAction(event, item, type) {
         let selection = {
             event: event,
@@ -754,9 +783,14 @@ let ProductDisplayComponent = class ProductDisplayComponent {
         };
         this.productSelected.emit(selection);
     }
+    //This is the function is for the Lightbox widget I'm using. It's passing in the product and the index number
+    //while saying open the lightbox of this product from the productList from this index
     openLightbox(item, index) {
         this._lightbox.open(this.productList, index);
     }
+    //This is the function to add the Product to the Cart 
+    //the Dispatch triggers a State Change(the only function to do so)
+    //We want to let the Redux Store know we added a product to a cart-so we must dispatch it.
     addProductToCart(item) {
         this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_4__["ReduxStoreActions"].AddToCart, product: item });
     }
@@ -814,11 +848,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let ShoppingCartComponent = class ShoppingCartComponent {
+let ShoppingCartComponent = 
+//This has to do with the State Management of the Redux Store.
+class ShoppingCartComponent {
     constructor(ngRedux) {
         this.ngRedux = ngRedux;
     }
     ngOnInit() { }
+    //here is the function for clearingcart(). Once again, dispatching this 
+    //information to the state to change it.
     clearCart() {
         this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__["ReduxStoreActions"].ClearCart });
     }
@@ -838,6 +876,7 @@ ShoppingCartComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./shopping-cart.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/shopping-cart/shopping-cart.component.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./shopping-cart.component.scss */ "./src/app/components/shopping-cart/shopping-cart.component.scss")).default]
     })
+    //This has to do with the State Management of the Redux Store.
 ], ShoppingCartComponent);
 
 
@@ -860,17 +899,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let DataRepositoryService = class DataRepositoryService {
+let DataRepositoryService = 
+//This page is to set up using the Firebase Database in my code.
+class DataRepositoryService {
+    //this constructor is for the HttpClient
     constructor(http) {
         this.http = http;
-        // TODO - change out for firebase url
-        this.apiUrl = 'http://northwind.cooneycreative.net';
+        // this is the apiURL for Firebase
+        this.apiUrl = 'AIzaSyDXqAYcerrj3t45L7VXfSMzg7XLtFe_iC0';
     }
+    //
     getHttpHeaders() {
         let headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
         headers = headers.set('Content-Type', 'application/json');
         return headers;
     }
+    //these are setting up the get and post requests for the database
     getRequest(uri) {
         return this.http.get(this.apiUrl + uri, { headers: this.getHttpHeaders() });
     }
@@ -883,6 +927,7 @@ DataRepositoryService.ctorParameters = () => [
 ];
 DataRepositoryService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    //This page is to set up using the Firebase Database in my code.
 ], DataRepositoryService);
 
 
@@ -900,6 +945,8 @@ DataRepositoryService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReduxStoreActions", function() { return ReduxStoreActions; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+//these are the various Redux Store reducers I use in my code. I need to set these up here
+//to be used in the rest of the code.
 
 var ReduxStoreActions;
 (function (ReduxStoreActions) {
@@ -927,6 +974,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./actions */ "./src/app/store/actions.ts");
 /* harmony import */ var tassign__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tassign */ "./node_modules/tassign/lib/index.js");
 /* harmony import */ var tassign__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tassign__WEBPACK_IMPORTED_MODULE_2__);
+//Redux allows for a programmer to create a function that takes a state and return a state.
+//Redux has different tools which make it really easy to code
+//Redux is useful when you're building a medium to large single page application 
+//with complex views.
 
 
 
@@ -936,20 +987,36 @@ const InitialState = {
     showCart: false,
     lastUpdated: null
 };
+//This code controls the State of the application, in regards to what the 
+//shopping cart does. The action determines how the state is changed.
+//This returns a new State after the switch statement.
+//In reducers (function below) you always have two arguments, the return State and then the action
 function rootReducer(state, action) {
+    //This switch helps return a new state, this is easy to test
+    //
     switch (action.type) {
         case _actions__WEBPACK_IMPORTED_MODULE_1__["ReduxStoreActions"].AddToCart:
             console.log(state);
             console.log(action);
             console.log(state.cart.length);
             if (state.cart.length > 0) {
+                //This was code I had to try and total how many qty were in the cart.
+                //This code blew UP my cart. It was like the fibonacci sequence, everything just kept multipling
+                //I kept checking the console and could see the code was constantly adding, but never the right way
+                //so I commented out and went searching the internet, and reached out for help.
                 // state.cart.forEach((item, index) => {
                 //   if(item.productID === action.product.productID){
                 //     item.cartQty += 1;
                 //     state.totalCartQty +=1;
                 //   }
                 // });  
+                //this is how I ended up putting the qty in front of the shopping cart.
+                //using the the state's cart, we find the parameter x, x being the ProductID,
+                //and it must match the action product.productID from above
                 let product = state.cart.find((x) => x.productID == action.product.productID);
+                //these if statements controls the cartQty and the state of the totalCartQty
+                //these reducers returns the new state, and internally updates the state
+                //the store will internally update the state across the app
                 if (product) {
                     product.cartQty += 1;
                     state.totalCartQty += 1;
@@ -970,6 +1037,11 @@ function rootReducer(state, action) {
                 cart: state.cart,
                 lastUpdated: new Date()
             });
+        //here are more of the switch statements
+        //you see the function UpdateCart, ShowCart, ClearCart,
+        //it returns the new state
+        //the return of the tassign is a simple wrapper, subset-typed, non-mutating object.assign
+        //aka returning the new state
         case _actions__WEBPACK_IMPORTED_MODULE_1__["ReduxStoreActions"].UpdateCart:
             console.log(state);
             return Object(tassign__WEBPACK_IMPORTED_MODULE_2__["tassign"])(state, {
