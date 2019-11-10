@@ -32,8 +32,8 @@ export class ProductDisplayComponent implements OnInit, OnChanges {
 	//and returns an array that contains the results
 	ngOnChanges(){
 		this.productList = this.products.map(i =>{
-			i.src = './' + i.productPhoto;
-			i.caption = i.productDescription;
+			i.src = './' + i.payload.doc.data().productPhoto;
+			i.caption = i.payload.doc.data().productDescription;
 			return i;
 		})
 		console.log('=== ngOnChanges from ProductDisplayComponent ===');

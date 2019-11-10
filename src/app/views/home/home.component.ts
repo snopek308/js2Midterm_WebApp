@@ -33,11 +33,13 @@ export class HomeComponent implements OnInit {
 	}
 
 	getDisplayProducts(){
-		this.products = this.db.collection('/products').valueChanges();
+		//Had to use snapshotChanges to get documentID for updating the record.
+		//In order to access the data, you have to use item.payload.doc.data().productPhoto in the HTML file
+		this.products = this.db.collection('/products').snapshotChanges();
 		this.products.subscribe((result: any) => {
 			console.log(result);
 			this.items = result.map(item => {
-				item.cartQty = 0;
+				item.docId = item.payload.doc.id;
 				return item;
 			});
 		}, (error: any) => {
@@ -47,21 +49,21 @@ export class HomeComponent implements OnInit {
 
 	productSelected(data: any){
 		console.log(data);
-		// if(data.type === "views"){
-		// 	this.db.collection('/products').doc(data.item.productID).update({
-		// 		"views": data.item.views += 1
-		// 	}).then(() => {
-		// 		this.getDisplayProducts();
-		// 	})
+		if(data.type === "views"){
+			this.db.collection('/products').doc(data.item.docId).update({
+				"views": data.item.payload.doc.data().views += 1
+			}).then(() => {
+				this.getDisplayProducts();
+			})
 
-		// }else{
-		// 	this.db.collection('/products').doc(data.item.productID).update({
-		// 		"likes": data.item.likes += 1
-		// 	}).then(() => {
-		// 		this.getDisplayProducts();
-		// 	})
+		}else{
+			this.db.collection('/products').doc(data.item.docId).update({
+				"likes": data.item.payload.doc.data().likes += 1
+			}).then(() => {
+				this.getDisplayProducts();
+			})
 
-		// }
+		}
 
 	}
 

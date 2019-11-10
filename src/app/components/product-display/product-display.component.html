@@ -5,26 +5,22 @@
             <div class="product-item__image">
                 <!--Within this is the Function OpenLightbox, which is the action of clicking on this image
                 and then the picture will display at its true size. It will also display its description beneath it-->
-                <img class="product-img" src="./{{item.productPhoto}}" alt={{item.productDescription}} (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
+                <img class="product-img" src="./{{item.payload.doc.data().productPhoto}}" alt={{item.payload.doc.data().productDescription}} (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
             </div>
             <div class="product-item__name">
-                <span>{{item.productName}}</span>
+                <span>{{item.payload.doc.data().productName}}</span>
                 <!--This click function adds the product to the arraylist cartItem, passing the item-->
                 <span><clr-icon shape="shopping-bag" class="is-solid is-highlight" (click)="addProductToCart(item)"></clr-icon></span>
             </div>
             <div class="product-item__actions">
-                    <!--This code was original to the website, I had likes and views. However, due to time constraints,
-                    I couldn't get my code to work to push back up to firebase to update the numbers of views
-                and likes. You could click on the icons, however, the numbers would disappear once the page would 
-            refresh. I would like this to work on the next stage of this project.-->
-                <!-- <div (click)="productAction($event, item, 'likes')">
-                    <span class="action-count">{{item.likes}}</span>
+                <div (click)="productAction($event, item, 'likes')">
+                    <span class="action-count">{{item.payload.doc.data().likes}}</span>
                     <clr-icon shape="heart" class="is-solid is-highlight" title="likes"></clr-icon>
                 </div>
                 <div>
-                    <span class="action-count">{{item.views}}</span>
+                    <span class="action-count">{{item.payload.doc.data().views}}</span>
                     <clr-icon shape="eye" class="is-solid is-highlight" title="views"></clr-icon>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

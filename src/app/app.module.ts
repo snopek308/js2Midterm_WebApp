@@ -28,6 +28,12 @@ import { createLogger } from 'redux-logger';
 import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RegistrationComponent } from './views/registration/registration.component';
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
+import { LoginComponent } from './views/login/login.component';
+import { AppService } from './service/app.service';
+import { AppGuard } from './guards/app.guard';
 
 @NgModule({
   declarations: [
@@ -41,6 +47,9 @@ import { FooterComponent } from './components/footer/footer.component';
     ShopComponent,
     NewsletterComponent,
     ShoppingCartComponent,
+    RegistrationComponent,
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -49,12 +58,15 @@ import { FooterComponent } from './components/footer/footer.component';
     NgReduxModule,
     HttpClientModule,
     CommonModule,
+    FormsModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     LightboxModule
   ],
   providers: [
+    AppGuard,
+    AppService,
     DataRepositoryService,
     AngularFirestore,
     { provide: APP_BASE_HREF, useValue: '/' },
