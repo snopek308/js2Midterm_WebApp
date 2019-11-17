@@ -34,6 +34,7 @@ import { DashboardComponent } from './views/admin/dashboard/dashboard.component'
 import { LoginComponent } from './views/login/login.component';
 import { AppService } from './service/app.service';
 import { AppGuard } from './guards/app.guard';
+import { ImageComponent } from './views/image/image.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AppGuard } from './guards/app.guard';
     ProductDisplayComponent,
     AboutMeComponent,
     ShopComponent,
+    ImageComponent,
     NewsletterComponent,
     ShoppingCartComponent,
     RegistrationComponent,

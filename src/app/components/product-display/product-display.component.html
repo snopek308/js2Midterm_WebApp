@@ -8,9 +8,12 @@
                 <img class="product-img" src="./{{item.payload.doc.data().productPhoto}}" alt={{item.payload.doc.data().productDescription}} (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
             </div>
             <div class="product-item__name">
-                <span>{{item.payload.doc.data().productName}}</span>
+                <a routerLink="/image/{{item.payload.doc.data().productID}}">{{item.payload.doc.data().productName}}</a>
                 <!--This click function adds the product to the arraylist cartItem, passing the item-->
-                <span><clr-icon shape="shopping-bag" class="is-solid is-highlight" (click)="addProductToCart(item)"></clr-icon></span>
+                <span role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+                    <clr-icon shape="shopping-bag" class="is-solid is-highlight" (click)="addProductToCart(item)"></clr-icon>
+                    <span class="tooltip-content">Add To Cart</span>
+                </span>
             </div>
             <div class="product-item__actions">
                 <div (click)="productAction($event, item, 'likes')">

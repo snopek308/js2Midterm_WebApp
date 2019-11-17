@@ -6,12 +6,14 @@ export class AppService {
 
     public appUser: any;
 
+    //using local storage due to time constraints. Will NEVER do this in real life
     public setUser(user: any){
-        this.appUser = user;
+        localStorage.setItem('user', JSON.stringify(user))
     }
 
     public getUser(){
-        return this.appUser;
+        this.appUser = localStorage.getItem('user');
+        return JSON.parse(this.appUser);
     }
 
 } 

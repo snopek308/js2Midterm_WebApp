@@ -9,6 +9,7 @@ import { RegistrationComponent } from './views/registration/registration.compone
 import { DashboardComponent } from './views/admin/dashboard/dashboard.component';
 import { LoginComponent } from './views/login/login.component';
 import { AppGuard } from './guards/app.guard';
+import { ImageComponent } from './views/image/image.component';
 
 //this is where I set up the routes for my website. By creating the paths here
 //I easily could use the RouterLink in the rest of my website.
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'about-me', component: AboutMeComponent},
   {path: 'newsletter', component: NewsletterComponent},
   {path: 'shop', component: ShopComponent},
+  {path: 'image/:id', component: ImageComponent},
   {path: 'registration', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin/dashboard', component: DashboardComponent, canActivate: [AppGuard]},

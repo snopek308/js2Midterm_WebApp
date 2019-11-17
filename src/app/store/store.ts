@@ -5,6 +5,7 @@
 
 import { ReduxStoreActions } from './actions';
 import { tassign } from 'tassign';
+import { stat } from 'fs';
 
 
 // determines shape of the store and properties
@@ -15,14 +16,16 @@ import { tassign } from 'tassign';
 //a component modifies the "slice," the changes are immediately visible to other components
 export interface IAppState {
   cart: any[],
-  totalCartQty: number;
+  totalCartQty: number,
   showCart: boolean,
+  isAuthenticated: boolean,
   lastUpdated: Date
 }
 
 export const InitialState: IAppState = {
   cart: [],
   totalCartQty: 0,
+  isAuthenticated: false,
   showCart: false,
   lastUpdated: null
 }
@@ -102,6 +105,12 @@ export function rootReducer(state: IAppState, action): IAppState{
       return tassign(state, {
         cart: [],
         totalCartQty: 0,
+        lastUpdated: new Date()
+      });
+      case ReduxStoreActions.Authenticated:
+      console.log(state);
+      return tassign(state, {
+        isAuthenticated: action.body.isAuthenticated,
         lastUpdated: new Date()
       });
   }

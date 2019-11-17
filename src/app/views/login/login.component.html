@@ -4,6 +4,18 @@
                 <h1>Login</h1>
             </div>
             <div class="clr-col-sm-6 clr-offset-sm-3">
+                <div class="alert alert-danger" role="alert" *ngIf="error !== ''">
+                    <div class="alert-items">
+                        <div class="alert-item static">
+                            <div class="alert-icon-wrapper">
+                                <clr-icon class="alert-icon" shape="exclamation-circle"></clr-icon>
+                            </div>
+                            <span class="alert-text">
+                                {{error}}
+                            </span>
+                        </div>                             
+                    </div>
+                </div>
                 <!-- #f is used to shorthand in order to access the ngForm model in the view state -->
                 <form class="clr-form" #f="ngForm" (ngSubmit)="login(f)">
                     <div class="clr-form-control">

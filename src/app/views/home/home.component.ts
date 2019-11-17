@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
 		this.products.subscribe((result: any) => {
 			console.log(result);
 			this.items = result.map(item => {
+				console.log(item.payload.doc.id)
 				item.docId = item.payload.doc.id;
 				return item;
 			});
@@ -49,6 +50,8 @@ export class HomeComponent implements OnInit {
 
 	productSelected(data: any){
 		console.log(data);
+		console.log(data.item.docId)
+		console.log(data.item.payload.doc.data())
 		if(data.type === "views"){
 			this.db.collection('/products').doc(data.item.docId).update({
 				"views": data.item.payload.doc.data().views += 1
@@ -81,19 +84,19 @@ export class HomeComponent implements OnInit {
 		this.toggleFilterBtn();
 		switch(type){
 			case 0:
-				this.products = this.db.collection('products', ref => ref.orderBy('productName', 'asc')).valueChanges();
+				this.products = this.db.collection('products', ref => ref.orderBy('productName', 'asc')).snapshotChanges();
 				this.applyProductsToList(this.products);
 				break;
 			case 1:
-				this.products = this.db.collection('products', ref => ref.orderBy('productName', 'desc')).valueChanges();
+				this.products = this.db.collection('products', ref => ref.orderBy('productName', 'desc')).snapshotChanges();
 				this.applyProductsToList(this.products);
 				break;
 			case 2:
-				this.products = this.db.collection('products', ref => ref.orderBy('likes', 'desc')).valueChanges();
+				this.products = this.db.collection('products', ref => ref.orderBy('likes', 'desc')).snapshotChanges();
 				this.applyProductsToList(this.products);
 				break;
 			case 3:
-				this.products = this.db.collection('products', ref => ref.orderBy('views', 'desc')).valueChanges();
+				this.products = this.db.collection('products', ref => ref.orderBy('views', 'desc')).snapshotChanges();
 				this.applyProductsToList(this.products);
 				break;
 		}
@@ -102,7 +105,11 @@ export class HomeComponent implements OnInit {
 	applyProductsToList(products: Observable<any>){
 		products.subscribe((result: any) => {
 			console.log(result);
-			this.items = result;
+			this.items = result.map(item => {
+				console.log(item.payload.doc.id)
+				item.docId = item.payload.doc.id;
+				return item;
+			});
 		}, (error: any) => {
 			console.log(error);
 		});

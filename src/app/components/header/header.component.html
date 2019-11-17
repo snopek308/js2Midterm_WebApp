@@ -3,7 +3,7 @@ app.component.html to place it on my different views in the project. -->
 
 <div class="header header-6">
     <div class="branding">
-        <img class="brand-logo" src="./assets/img/TS-Logo-1.png" />
+        <img class="brand-logo" src="./assets/img/TS-Logo-1.png" routerLink="/home"/>
     </div>
     <div class="header-actions">
         <!--Here is the different way Angular does routing between it's views, 
@@ -12,6 +12,10 @@ app.component.html to place it on my different views in the project. -->
         <a routerLink="/about-me" class="nav-link nav-text">About Me</a>
         <a routerLink="/newsletter" class="nav-link nav-text">Newsletter</a>
         <a routerLink="/registration" class="nav-link nav-text">Registration</a>
+        <a class="nav-link nav-text">
+            <span (click)="loginPage()" *ngIf="(isAuthenticated | async) == false">Sign In</span>
+            <span (click)="logout()" *ngIf="isAuthenticated | async">Sign Out</span> 
+        </a>
     </div>
     <!--This is the just the code for the display of the shopping cart but not the actual shopping cart itself
     I have the class of "is-highlight" because the website I'm redoing uses a lot of blue. I wanted a more clean and 
