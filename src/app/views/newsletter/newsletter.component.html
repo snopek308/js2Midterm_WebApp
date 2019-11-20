@@ -1,12 +1,51 @@
 <div class="view-wrapper">
-        <div class="clr-row clr-justify-content-end mb-1">
-            <div class="clr-col-sm-12">
-                <p>So, this page is not finished-it will be for the next project. I want to
-                    have users sign-up for a Newsletter. Massive errors in the FOOTER of all things
-                    pushed back my timeline immensely. Because I didn't want to go and hide this 
-                    page, I left it as it.
-                    Hope you find the Easter Egg!
-                </p>
+    <div class="clr-row">
+        <div class="clr-col-sm-6 clr-offset-sm-3">
+            <h1>Newsletter</h1>
+        </div>
+        <div class="clr-col-sm-6 clr-offset-sm-3">
+            <!-- #f is used to shorthand in order to access the ngForm model in the view state -->
+            <form class="clr-form" #f="ngForm" (ngSubmit)="submitForm(f)">
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">First Name</label>
+                    <div class="clr-control-container" [class.clr-error]="!f.valid">
+                        <div class="clr-input-wrapper">
+                            <input type="text" id="firstName" name="firstName" required
+                                [(ngModel)]="formModel.firstName" class="clr-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">Last Name</label>
+                    <div class="clr-control-container">
+                        <div class="clr-input-wrapper">
+                            <input type="text" id="lastName" name="lastName" required [(ngModel)]="formModel.lastName"
+                                class="clr-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="clr-form-control">
+                    <label for="example" class="clr-control-label">Email</label>
+                    <div class="clr-control-container">
+                        <div class="clr-input-wrapper">
+                            <input type="text" id="email" name="email" required [(ngModel)]="formModel.email"
+                                class="clr-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="clr-form-control">
+                    <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+                </div>
+            </form>
+        </div>
+                <div class="clr-col-sm-6 clr-sm-6">
+
+                    <h2>Do you want to be at the right place at the right time?</h2>
+                    <p>Would you like news sent right to your email as it happens?
+                        Do you want to know what is going on in Waukesha county?
+                        Join my Newsletter emailing list and have everything sent directly to your email.
+                        If I'm at the right place at the right time, so can you!
+                    </p>
+                </div>
             </div>
         </div>
-    </div>

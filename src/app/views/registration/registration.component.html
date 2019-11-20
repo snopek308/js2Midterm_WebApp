@@ -3,14 +3,18 @@
         <div class="clr-col-sm-6 clr-offset-sm-3">
             <h1>Registration</h1>
         </div>
-        <div class="clr-col-sm-6 clr-offset-sm-3">
-            <!-- #f is used to shorthand in order to access the ngForm model in the view state -->
+    </div>
+    <div class="clr-row">
+        <!-- <div class="clr-col-sm-6 clr-offset-sm-3"> -->
+        <!-- #f is used to shorthand in order to access the ngForm model in the view state -->
+        <div class="clr-col-sm-6 clr-sm-6">
             <form class="clr-form" #f="ngForm" (ngSubmit)="submitForm(f)">
                 <div class="clr-form-control">
                     <label for="example" class="clr-control-label">First Name</label>
                     <div class="clr-control-container" [class.clr-error]="!f.valid">
                         <div class="clr-input-wrapper">
-                            <input type="text" id="firstName" name="firstName" required [(ngModel)]="formModel.firstName" class="clr-input">
+                            <input type="text" id="firstName" name="firstName" required
+                                [(ngModel)]="formModel.firstName" class="clr-input">
                         </div>
                     </div>
                 </div>
@@ -18,7 +22,8 @@
                     <label for="example" class="clr-control-label">Last Name</label>
                     <div class="clr-control-container">
                         <div class="clr-input-wrapper">
-                            <input type="text" id="lastName" name="lastName" required [(ngModel)]="formModel.lastName" class="clr-input">
+                            <input type="text" id="lastName" name="lastName" required [(ngModel)]="formModel.lastName"
+                                class="clr-input">
                         </div>
                     </div>
                 </div>
@@ -26,7 +31,8 @@
                     <label for="example" class="clr-control-label">Email</label>
                     <div class="clr-control-container">
                         <div class="clr-input-wrapper">
-                            <input type="text" id="email" name="email" required [(ngModel)]="formModel.email" class="clr-input">
+                            <input type="text" id="email" name="email" required [(ngModel)]="formModel.email"
+                                class="clr-input">
                         </div>
                     </div>
                 </div>
@@ -34,7 +40,8 @@
                     <label for="example" class="clr-control-label">Password</label>
                     <div class="clr-control-container">
                         <div class="clr-input-wrapper">
-                            <input type="text" id="password" name="password" required [(ngModel)]="formModel.password" class="clr-input">
+                            <input type="text" id="password" name="password" required [(ngModel)]="formModel.password"
+                                class="clr-input">
                             <!-- <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon> -->
                         </div>
                         <!-- <span class="clr-subtext">Error message</span> -->
@@ -45,5 +52,16 @@
                 </div>
             </form>
         </div>
+        <div class="clr-col-sm-6 clr-sm-6">
+            <h2>Join to Post</h2>
+            <p>As any good photographer knows, a picture is worth a thousand words. Well, I want to hear your words.
+                Register for my site and you'll be able to:</p>
+            <ul>
+                <li>Comment on photos</li>
+                <li>Like other people's posts</li>
+                <li>Rate my photo</li>
+            </ul>
+        </div>
     </div>
 </div>
+
