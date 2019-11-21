@@ -1,10 +1,45 @@
 <div class="view-wrapper">
         <div class="clr-row">
-            <div class="clr-col-sm-6 clr-offset-sm-3">
+            <div class="clr-col-sm-12">
                 <h1>Dashboard</h1>
             </div>
-            <div class="clr-col-sm-6 clr-offset-sm-3">
-                <!-- #f is used to shorthand in order to access the ngForm model in the view state -->
+            <div class="clr-col-sm-6">
+                    <div class="clr-col-sm-12" *ngIf="forumData.length > 0">
+                            <h3>User Posts</h3>
+                        </div>
+                        <div class="clr-col-sm-12" *ngFor="let entry of forumData">
+                            <div class="clr-row">
+                                <div class="clr-col-md-8">
+                                    <div class="card">
+                                        <div class="card-block">
+                
+                                            <div class="card-text">
+                                                {{entry?.payload?.doc?.data().comments}}
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-sm btn-link" (click)="addLikeToForumComment(entry)"><clr-icon shape="thumbs-up"></clr-icon> Like</button>
+                                            <button class="btn btn-sm btn-link" (click)="addDislikeToForumComment(entry)">
+                                                <clr-icon shape="thumbs-down"></clr-icon> DisLike
+                                            </button>
+                                            <button class="btn btn-sm btn-link">
+                                                    <clr-icon shape="star" (click)="setStarRating(1, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 1 || entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                                    <clr-icon shape="star" (click)="setStarRating(2, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                                    <clr-icon shape="star" (click)="setStarRating(3, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                                    <clr-icon shape="star" (click)="setStarRating(4, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                                    <clr-icon shape="star" (click)="setStarRating(5, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                            </button>
+                                            <button class="btn btn-sm btn-link" disabled>
+                                                <span>Likes: {{entry?.payload?.doc?.data().likes}}</span>
+                                            </button>
+                                            <button class="btn btn-sm btn-link" disabled>
+                                                <span>Dislikes: {{entry?.payload?.doc?.data().dislikes}}</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
  
             </div>
         </div>

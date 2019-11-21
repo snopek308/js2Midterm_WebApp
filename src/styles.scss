@@ -1,8 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background: #fafafa;
+    overflow-x: hidden;
+}
+
 h2, h1 {
     margin-top: 0;
 }
 
+img{
+    border-radius: 5px;
+}
 
 .clr-row{
     margin: 0;
@@ -16,6 +24,7 @@ h2, h1 {
     padding: 0 1em;
     padding-top: 80px;
     padding-bottom: 40px;
+    min-height: 600px;
 }
 
 .d-flex {
@@ -50,4 +59,15 @@ h2, h1 {
 
 .p-0{
     padding: 0!important;
+}
+
+.dropdown-menu{
+    left: -91px;
+}
+
+@media screen and (max-width: 768px){
+    .main-container.open-hamburger-menu .header .header-backdrop, .main-container.open-overflow-menu .header .header-backdrop{
+        background: rgba(0,0,0,.45)!important;
+    }
+
 }

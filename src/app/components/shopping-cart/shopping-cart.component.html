@@ -15,8 +15,8 @@ In the next project, my goal is to include icons which increase and decrese qty,
                     <div class="d-flex d-flex__center-sb product-info">
                         <!--The {{}} are interpolation. In Angular there are lots of different ways to use them. Here
                         its saying I want the item in the row in the array and the productName or the productPrice is the array property-->
-                        <span>{{item.productName}}</span> 
-                        <span>{{item.productPrice}}</span>
+                        <span>{{item.payload.doc.data().productName}}</span> 
+                        <span>{{item.payload.doc.data().productPrice}}</span>
                     </div>
                     <div>
                         <!--Reference for interpolation: https://angular.io/guide/template-syntax-->
@@ -24,7 +24,7 @@ In the next project, my goal is to include icons which increase and decrese qty,
                     </div>
                 </div>
                 <div class="list-item__desc">
-                    <span>{{item.productDescription}}</span>
+                    <span>{{item.payload.doc.data().productDescription}}</span>
                 </div>
             </li>
         </ul>

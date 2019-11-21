@@ -37,16 +37,16 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-sm btn-link" (click)="addLikeToForumComment(entry?.payload?.doc?.data())"><clr-icon shape="thumbs-up"></clr-icon> Like</button>
-                            <button class="btn btn-sm btn-link" (click)="addDislikeToForumComment(entry?.payload?.doc?.data())">
+                            <button class="btn btn-sm btn-link" (click)="addLikeToForumComment(entry)"><clr-icon shape="thumbs-up"></clr-icon> Like</button>
+                            <button class="btn btn-sm btn-link" (click)="addDislikeToForumComment(entry)">
                                 <clr-icon shape="thumbs-down"></clr-icon> DisLike
                             </button>
                             <button class="btn btn-sm btn-link">
-                                    <clr-icon shape="star" (click)="setStarRating(1, entry?.payload?.doc?.data())"></clr-icon>
-                                    <clr-icon shape="star" (click)="setStarRating(2, entry?.payload?.doc?.data())"></clr-icon>
-                                    <clr-icon shape="star" (click)="setStarRating(3, entry?.payload?.doc?.data())"></clr-icon>
-                                    <clr-icon shape="star" (click)="setStarRating(4, entry?.payload?.doc?.data())"></clr-icon>
-                                    <clr-icon shape="star" (click)="setStarRating(5, entry?.payload?.doc?.data())"></clr-icon>
+                                    <clr-icon shape="star" (click)="setStarRating(1, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 1 || entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                    <clr-icon shape="star" (click)="setStarRating(2, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                    <clr-icon shape="star" (click)="setStarRating(3, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                    <clr-icon shape="star" (click)="setStarRating(4, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
+                                    <clr-icon shape="star" (click)="setStarRating(5, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 5"></clr-icon>
                             </button>
                             <button class="btn btn-sm btn-link" disabled>
                                 <span>Likes: {{entry?.payload?.doc?.data().likes}}</span>

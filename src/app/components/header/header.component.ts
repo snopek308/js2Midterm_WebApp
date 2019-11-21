@@ -7,6 +7,7 @@ import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from 'src/app/store/store';
 import { ReduxStoreActions } from 'src/app/store/actions';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AppService } from 'src/app/service/app.service';
 
 @Component({
 	selector: 'app-header',
@@ -20,23 +21,33 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HeaderComponent implements OnInit {
 	@select((s: IAppState) => s.totalCartQty) cartQty;
 	@select((s: IAppState) => s.isAuthenticated) isAuthenticated;
+	@select((s: IAppState) => s.user) user;
 
-	constructor(public ngRedux: NgRedux<IAppState>, public router: Router, public route: ActivatedRoute){
-
+	constructor(public ngRedux: NgRedux<IAppState>, public router: Router, public route: ActivatedRoute, public appService: AppService){
+		if(this.appService.getUser()){
+			this.ngRedux.dispatch({type: ReduxStoreActions.StoreUser, body: { user: this.appService.getUser()}});
+			this.ngRedux.dispatch({type: ReduxStoreActions.Authenticated, body: { isAuthenticated: true}});
+		}
 	}
 	
 	ngOnInit() {
 		console.log('header comp init')
 		console.log(this.isAuthenticated);
+		console.log(this.user);
 	 }
 
 	toggleCart(){
 		this.ngRedux.dispatch({type: ReduxStoreActions.ShowCart});
 	}
 
+	toggleNav(){
+		document.querySelector('.main-container').classList.toggle('open-hamburger-menu');
+	}
+
 	logout(){
 		localStorage.clear();
 		this.ngRedux.dispatch({type: ReduxStoreActions.Authenticated, body: { isAuthenticated: false}});
+		this.ngRedux.dispatch({type: ReduxStoreActions.RemoveUser});
 		if(this.router.url === '/admin/dashboard'){
 			this.router.navigate(['/']);
 		}

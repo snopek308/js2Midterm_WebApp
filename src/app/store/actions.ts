@@ -6,5 +6,7 @@ export enum ReduxStoreActions {
     AddToCart = "AddToCart",
     UpdateCart = "UpdateCart",
     ClearCart = "ClearCart",
-    Authenticated = "Authenticated"
+    Authenticated = "Authenticated",
+    StoreUser = "StoreUser",
+    RemoveUser = "RemoveUser"
   }

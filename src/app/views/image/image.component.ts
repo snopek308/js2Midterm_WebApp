@@ -73,17 +73,32 @@ export class ImageComponent implements OnInit {
 	addLikeToForumComment(item: any){
 		// add new like to previous count and update in database
 		console.log(item);
+		this.db.collection('forums').doc(item.docId).update({likes: item.payload.doc.data().likes +=1});
+			this.getForumData(this.imageId);
 	}
 
 	addDislikeToForumComment(item: any){
 		// add new dislike to prevous count and update in database.
 		console.log(item);
+		let dislikes = item.payload.doc.data().dislikes;
+		this.db.collection('forums').doc(item.docId).update({dislikes: dislikes +=1});
+		this.getForumData(this.imageId);
 	}
+	
 
 	setStarRating(rating: number, item: any){
 		// calculate previous rating with new rating to determine average. update in database
+		
 		console.log(rating);
 		console.log(item);
+		this.db.collection('forums').doc(item.docId).update({rating: rating});
+		this.getForumData(this.imageId);
 	}
 
+	// calRatingAvg(item: any, newRating: number){
+
+	// 	let currentAvg = item.payload.doc.data().avg;
+	// 	rating + newRating / 
+
+	// }
 }

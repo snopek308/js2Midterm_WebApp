@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 					docId: result[0].payload.doc.id
 				};
 				this.ngRedux.dispatch({type: ReduxStoreActions.Authenticated, body: { isAuthenticated: true}});
+				this.ngRedux.dispatch({type: ReduxStoreActions.StoreUser, body: { user: user}});
 				this.appService.setUser(user);
 				this.router.navigate(['/admin/dashboard']);
 			} else {

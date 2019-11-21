@@ -20,6 +20,7 @@ export interface IAppState {
   totalCartQty: number,
   showCart: boolean,
   isAuthenticated: boolean,
+  user: any,
   lastUpdated: Date
 }
 
@@ -28,6 +29,7 @@ export const InitialState: IAppState = {
   totalCartQty: 0,
   isAuthenticated: false,
   showCart: false,
+  user: null,
   lastUpdated: null
 }
 
@@ -38,6 +40,7 @@ export const InitialState: IAppState = {
 export function rootReducer(state: IAppState, action): IAppState{
   //This switch helps return a new state, this is easy to test
   //
+
   switch (action.type){
     case ReduxStoreActions.AddToCart:
         console.log(state);
@@ -59,7 +62,7 @@ export function rootReducer(state: IAppState, action): IAppState{
           //this is how I ended up putting the qty in front of the shopping cart.
           //using the the state's cart, we find the parameter x, x being the ProductID,
           //and it must match the action product.productID from above
-          let product = state.cart.find((x) => x.productID == action.product.productID);
+          let product = state.cart.find((x) => x.docId == action.product.docId);
 
           //these if statements controls the cartQty and the state of the totalCartQty
           //these reducers returns the new state, and internally updates the state
@@ -112,6 +115,18 @@ export function rootReducer(state: IAppState, action): IAppState{
       console.log(state);
       return tassign(state, {
         isAuthenticated: action.body.isAuthenticated,
+        lastUpdated: new Date()
+      });
+      case ReduxStoreActions.StoreUser:
+      console.log(state);
+      return tassign(state, {
+        user: action.body.user,
+        lastUpdated: new Date()
+      });
+      case ReduxStoreActions.RemoveUser:
+      console.log(state);
+      return tassign(state, {
+        user: null,
         lastUpdated: new Date()
       });
   }
