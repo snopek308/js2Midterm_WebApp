@@ -11,7 +11,7 @@
                     <div class="dropdown-menu">
                         <div class="dropdown-item" (click)="sendFilterQuery(0)">Sort A to Z</div>
                         <div class="dropdown-item" (click)="sendFilterQuery(1)">Sort Z to A</div>
-                        <div class="dropdown-item" (click)="sendFilterQuery(2)">Sort by most liked</div>
+                        <!-- <div class="dropdown-item" (click)="sendFilterQuery(2)">Sort by most liked</div> -->
                         <div class="dropdown-item" (click)="sendFilterQuery(3)">Sort by most views</div>
                     </div>
                 </div>
@@ -21,6 +21,25 @@
     <app-product-display class="clr-row" [products]="items" (productSelected)="productSelected($event)">
     </app-product-display>
 </div>
+
+<!--This Modal opens when the user first uses teh website to tell them about it.-->
+<clr-modal [(clrModalOpen)]="opened" [clrModalClosable]="false">
+    <h3 class="modal-title">Welcome to TimSnopek.Com</h3>
+    <div class="modal-body">
+        <p>Welcome to my Photography Website! You might be a digital photographer, or a film
+            snob, but all are welcome. I post the news in photos from Southeastern Wisconsin.
+            Check out my photos, make some comments, sign-up for my newsletter or 
+            earn some badges. 
+
+            Thanks for coming out!</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="closedDialog()">
+            Okay
+        </button>
+    </div>
+</clr-modal>
+
 
 
 <!-- <span *ngIf="items.length > 0; else emptyContents"></span>

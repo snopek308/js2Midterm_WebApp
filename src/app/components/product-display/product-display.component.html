@@ -5,15 +5,26 @@
             <div class="product-item__image">
                 <!--Within this is the Function OpenLightbox, which is the action of clicking on this image
                 and then the picture will display at its true size. It will also display its description beneath it-->
-                <img class="product-img" src="./{{item.payload.doc.data().productPhoto}}"
-                    alt={{item.payload.doc.data().productDescription}}
-                    (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
+                <span role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+                    <img class="product-img" src="./{{item.payload.doc.data().productPhoto}}"
+                        alt={{item.payload.doc.data().productDescription}}
+                        (click)="productAction($event, item, 'views'); openLightbox(item, i)" />
+                    <span class="tooltip-content">Click me to see the picture</span>
+                </span>
+
             </div>
             <div class="product-item__name">
-                <a routerLink="/image/{{item.payload.doc.data().productID}}">{{item.payload.doc.data().productName}}</a>
+                <span role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+                    <a
+                        routerLink="/image/{{item.payload.doc.data().productID}}">{{item.payload.doc.data().productName}}</a>
+                    <span class="tooltip-content">Click me to comment on my picture!</span>
+                </span>
                 <div>
-                    <span class="action-count">{{item.payload.doc.data().views}}</span>
-                    <clr-icon shape="eye" class="is-solid is-highlight" title="views"></clr-icon>
+                    <span role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+                        <span class="action-count">{{item.payload.doc.data().views}}</span>
+                        <clr-icon shape="eye" class="is-solid is-highlight" title="views"></clr-icon>
+                        <span class="tooltip-content">Total view count</span>
+                    </span>
                 </div>
             </div>
             <div class="product-item__actions">

@@ -2,16 +2,9 @@
 <div class="view-wrapper">
     <div class="clr-row clr-justify-content-end mb-1">
         <div class="clr-col-sm-12">
-            <img src="{{product?.productPhoto}}" style="width: 100%; height: auto; max-height: 460px;" alt="{{product?.productName}}">
+            <img src="{{product?.productPhoto}}" style="width: 100%; height: auto;" alt="{{product?.productName}}">
             <div class="product-item__name">
                 <h1>{{product?.productName}}</h1>
-                <button class="btn btn-sm btn-link">
-                        <clr-icon shape="star" (click)="setStarRating(1, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 1 || entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
-                        <clr-icon shape="star" (click)="setStarRating(2, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
-                        <clr-icon shape="star" (click)="setStarRating(3, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
-                        <clr-icon shape="star" (click)="setStarRating(4, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
-                        <clr-icon shape="star" (click)="setStarRating(5, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 5"></clr-icon>
-                </button>
                 <p>{{product?.productDescription}}</p>
             </div>
         </div>
@@ -44,10 +37,13 @@
                             </div>
                         </div>
                         <div class="card-footer">
+                            <span role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
                             <button class="btn btn-sm btn-link" (click)="addLikeToForumComment(entry)"><clr-icon shape="thumbs-up"></clr-icon> Like</button>
                             <button class="btn btn-sm btn-link" (click)="addDislikeToForumComment(entry)">
                                 <clr-icon shape="thumbs-down"></clr-icon> DisLike
                             </button>
+                            <span class="tooltip-content">Click me to like or dislike this comment</span>
+                        </span>
                             <!-- <button class="btn btn-sm btn-link">
                                     <clr-icon shape="star" (click)="setStarRating(1, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 1 || entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>
                                     <clr-icon shape="star" (click)="setStarRating(2, entry)" [class.is-solid]="entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5"></clr-icon>

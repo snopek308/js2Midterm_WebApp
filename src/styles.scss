@@ -71,3 +71,20 @@ img{
     }
 
 }
+
+.card-count {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 800;
+    padding: .5em 0;
+}
+
+.badge {
+    padding: 1.25em;
+    margin-top: 10px;
+    border-radius: 30px;
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+}

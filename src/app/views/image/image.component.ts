@@ -18,6 +18,9 @@ export class ImageComponent implements OnInit {
 	public user: any;
 	public comment: string;
 
+	//default class constructor, the firebase connection and the parameter of the route to get the info out.
+	//pulling the imageID from the Angular Route Param, which is used to make a request to get the product
+	//details.
 	constructor(protected route: ActivatedRoute, public db: AngularFirestore, public appService: AppService){
 		this.route.params.subscribe(parms => {
 			this.imageId = parms.id;
@@ -30,6 +33,7 @@ export class ImageComponent implements OnInit {
 		})
 	}
 
+	//this is setting up listening for the changes to the database
 	ngOnInit() {
 		console.log(this.imageData);
 		this.imageData.subscribe((result: any) => {
@@ -37,6 +41,7 @@ export class ImageComponent implements OnInit {
 		})
 	}
 	
+	//this function is setting up how to push a new doc to the database
 	submitForum(f: any){
 		console.log(f);
 		console.log(this.user);
@@ -54,6 +59,7 @@ export class ImageComponent implements OnInit {
 		f.reset();
 	}
 
+	//this function is setting up 
 	getForumData(id: any){
 		let data = this.db.collection("forums", ref => 
 		ref.where('photoDocID', '==', id))
@@ -70,6 +76,7 @@ export class ImageComponent implements OnInit {
 		})
 	}
 
+	//adding likes to the count in the database
 	addLikeToForumComment(item: any){
 		// add new like to previous count and update in database
 		console.log(item);
@@ -77,6 +84,7 @@ export class ImageComponent implements OnInit {
 			this.getForumData(this.imageId);
 	}
 
+	//adding dislikes to the count in the database
 	addDislikeToForumComment(item: any){
 		// add new dislike to prevous count and update in database.
 		console.log(item);
@@ -95,10 +103,4 @@ export class ImageComponent implements OnInit {
 		this.getForumData(this.imageId);
 	}
 
-	// calRatingAvg(item: any, newRating: number){
-
-	// 	let currentAvg = item.payload.doc.data().avg;
-	// 	rating + newRating / 
-
-	// }
 }

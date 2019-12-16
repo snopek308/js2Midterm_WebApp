@@ -18,13 +18,20 @@ export class HomeComponent implements OnInit {
 
 	// initialized variable
 	public openDropdown: boolean = false;
+	public opened: boolean = false;
 	public items: any[] = [];
 	public product: any;
 	public products: Observable<any[]>;
 
 	// dependency injection (dpi) to user service based class
 	constructor(public db: AngularFirestore) {
-
+		//this loop sets up the dialogue box to let users know what to do on the website
+		let dialogStatus = localStorage.getItem("first_visit");
+		if (dialogStatus === "true"){
+		}
+		else{
+			this.opened = true;
+		}
 	}
 
 
@@ -119,6 +126,11 @@ export class HomeComponent implements OnInit {
 		this.openDropdown = !this.openDropdown;
 	}
 
+	//this function changes the variable opened to false so it closes and doesn't reopen using Local Storage
+	closedDialog(){
+		localStorage.setItem("first_visit", "true");
+		this.opened = false;
+	}
 
 
 }
