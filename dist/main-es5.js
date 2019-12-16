@@ -55,7 +55,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!--For this page, I had to set up the components for the entire site.\nBy putting the app-header, the router-outlet and app-footer here, these components\nappear on all my views-->\n\n<div id=\"app\">\n  <app-header></app-header>\n  <router-outlet></router-outlet>\n  <app-footer></app-footer>\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!--For this page, I had to set up the components for the entire site.\nBy putting the app-header, the router-outlet and app-footer here, these components\nappear on all my views-->\n<clr-main-container>\n<div id=\"app\">\n  <app-header></app-header>\n  <router-outlet></router-outlet>\n  <app-footer></app-footer>\n</div>\n</clr-main-container>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/footer/footer.component.html": 
@@ -77,7 +77,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!-- Code for the Header, as a component, I have the html here, and then I use the \r\napp.component.html to place it on my different views in the project. -->\r\n\r\n<div class=\"header header-6\">\r\n    <div class=\"branding\">\r\n        <img class=\"brand-logo\" src=\"./assets/img/TS-Logo-1.png\" />\r\n    </div>\r\n    <div class=\"header-actions\">\r\n        <!--Here is the different way Angular does routing between it's views, \r\n        I really like it because it when I read it, I know what a routerLink is without having to think too hard about it-->\r\n        <a routerLink=\"/home\" class=\"nav-link nav-text\">Home</a>\r\n        <a routerLink=\"/about-me\" class=\"nav-link nav-text\">About Me</a>\r\n        <a routerLink=\"/newsletter\" class=\"nav-link nav-text\">Newsletter</a>\r\n        <a routerLink=\"/registration\" class=\"nav-link nav-text\">Registration</a>\r\n    </div>\r\n    <!--This is the just the code for the display of the shopping cart but not the actual shopping cart itself\r\n    I have the class of \"is-highlight\" because the website I'm redoing uses a lot of blue. I wanted a more clean and \r\n    sleek website, but wanted to honor the blue in mine.-->\r\n    <div class=\"header-cart\" (click)=\"toggleCart()\">\r\n        <app-shopping-cart></app-shopping-cart>\r\n        <span class=\"cart-qty\">{{cartQty | async}}</span>\r\n        <clr-icon shape=\"shopping-cart\" size=\"18\" class=\"is-highlight\"></clr-icon>\r\n    </div>\r\n</div>\r\n\r\n<!--For next time, I would like to incorporate more of the business name bigger in the title. I would also like to \r\nadd something to tell the customers what they can do on the site, I just don't know how you do that so it doesn't happen everytime\r\nthey come to the website. Some sort of pop-up to what they can do? I'm not sure what, just something.-->\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("\r\n    <clr-header class=\"header-6 header\">\r\n        <button class=\"header-hamburger-trigger\" type=\"button\" aria-label=\"Open\" (click)=\"toggleNav()\"><span></span></button>\r\n        <div class=\"branding\">\r\n                <img class=\"brand-logo cursor-pointer\" src=\"./assets/img/TS-Logo-1.png\" routerLink=\"/home\"/>\r\n        </div>\r\n        <div class=\"header-nav clr-nav-level-1\">\r\n            <a class=\"nav-link\" routerLink=\"/home\" class=\"nav-link nav-text cursor-pointer\" id=\"home-link\" rel=\"noopener\">\r\n                <span class=\"nav-text\">Home</span>\r\n            </a>\r\n            <a class=\"nav-link active\" routerlink=\"/\" routerlinkactive=\"active\" routerLink=\"/about-me\" class=\"nav-link nav-text cursor-pointer\">\r\n                <span class=\"nav-text\">About Me</span>\r\n            </a>\r\n            <a class=\"nav-link\" routerLink=\"/newsletter\" class=\"nav-link nav-text cursor-pointer\" rel=\"noopener\">\r\n                <span class=\"nav-text\">Newsletter</span>\r\n            </a>\r\n            <a class=\"nav-link\" routerLink=\"/registration\" class=\"nav-link nav-text cursor-pointer\" rel=\"noopener\">\r\n                <span class=\"nav-text\">Registration</span>\r\n            </a>\r\n            <a class=\"nav-link\" routerLink=\"/admin/dashboard\" class=\"nav-link nav-text\" rel=\"noopener\" *ngIf=\"user | async\">\r\n                <span class=\"cursor-pointer\">{{(user | async)?.data?.firstName}} {{(user | async)?.data?.lastName}}</span>\r\n            </a>\r\n            <a class=\"nav-link\" class=\"nav-link nav-text\" rel=\"noopener\">\r\n                <span class=\"cursor-pointer\" (click)=\"loginPage()\" *ngIf=\"(isAuthenticated | async) == false\">Sign In</span>\r\n                <span class=\"cursor-pointer\" (click)=\"logout()\" *ngIf=\"isAuthenticated | async\">\r\n                        <clr-icon shape=\"power\"></clr-icon>\r\n                </span>\r\n            </a>\r\n\r\n        </div>\r\n        <div class=\"header-cart\" (click)=\"toggleCart()\">\r\n        <app-shopping-cart></app-shopping-cart>\r\n        <span class=\"cart-qty\">{{cartQty | async}}</span>\r\n        <clr-icon shape=\"shopping-cart\" size=\"18\" class=\"is-highlight\"></clr-icon>\r\n        </div>\r\n        <div class=\"header-backdrop\"></div>\r\n    </clr-header>\r\n\r\n\r\n\r\n    <!-- Code for the Header, as a component, I have the html here, and then I use the \r\napp.component.html to place it on my different views in the project. -->\r\n\r\n<!-- <div class=\"header header-6\">\r\n    <div class=\"branding\">\r\n        <img class=\"brand-logo cursor-pointer\" src=\"./assets/img/TS-Logo-1.png\" routerLink=\"/home\"/>\r\n    </div>\r\n    <div class=\"header-actions\"> -->\r\n        <!--Here is the different way Angular does routing between it's views, \r\n        I really like it because it when I read it, I know what a routerLink is without having to think too hard about it-->\r\n        <!-- <a routerLink=\"/home\" class=\"nav-link nav-text cursor-pointer\">Home</a>\r\n        <a routerLink=\"/about-me\" class=\"nav-link nav-text cursor-pointer\">About Me</a>\r\n        <a routerLink=\"/newsletter\" class=\"nav-link nav-text cursor-pointer\">Newsletter</a>\r\n        <a routerLink=\"/registration\" class=\"nav-link nav-text cursor-pointer\">Registration</a>\r\n        <a class=\"nav-link nav-text\">\r\n            <span class=\"cursor-pointer\" (click)=\"loginPage()\" *ngIf=\"(isAuthenticated | async) == false\">Sign In</span>\r\n            <span class=\"cursor-pointer\" (click)=\"logout()\" *ngIf=\"isAuthenticated | async\">Sign Out</span> \r\n        </a>\r\n    </div> -->\r\n    <!--This is the just the code for the display of the shopping cart but not the actual shopping cart itself\r\n    I have the class of \"is-highlight\" because the website I'm redoing uses a lot of blue. I wanted a more clean and \r\n    sleek website, but wanted to honor the blue in mine.-->\r\n    <!-- <div class=\"header-cart\" (click)=\"toggleCart()\">\r\n        <app-shopping-cart></app-shopping-cart>\r\n        <span class=\"cart-qty\">{{cartQty | async}}</span>\r\n        <clr-icon shape=\"shopping-cart\" size=\"18\" class=\"is-highlight\"></clr-icon>\r\n    </div>\r\n</div> -->\r\n\r\n<!--For next time, I would like to incorporate more of the business name bigger in the title. I would also like to \r\nadd something to tell the customers what they can do on the site, I just don't know how you do that so it doesn't happen everytime\r\nthey come to the website. Some sort of pop-up to what they can do? I'm not sure what, just something.-->");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/product-display/product-display.component.html": 
@@ -88,7 +88,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"clr-col-sm-12 clr-col-md-6 clr-col-lg-4 clr-col-xl-3\" *ngFor=\"let item of productList; let i = index\">\r\n    <!--Block Element and Modifer naming conventions-->\r\n    <div class=\"product-wrapper\">\r\n        <div class=\"product-item\">\r\n            <div class=\"product-item__image\">\r\n                <!--Within this is the Function OpenLightbox, which is the action of clicking on this image\r\n                and then the picture will display at its true size. It will also display its description beneath it-->\r\n                <img class=\"product-img\" src=\"./{{item.payload.doc.data().productPhoto}}\" alt={{item.payload.doc.data().productDescription}} (click)=\"productAction($event, item, 'views'); openLightbox(item, i)\" />\r\n            </div>\r\n            <div class=\"product-item__name\">\r\n                <span>{{item.payload.doc.data().productName}}</span>\r\n                <!--This click function adds the product to the arraylist cartItem, passing the item-->\r\n                <span><clr-icon shape=\"shopping-bag\" class=\"is-solid is-highlight\" (click)=\"addProductToCart(item)\"></clr-icon></span>\r\n            </div>\r\n            <div class=\"product-item__actions\">\r\n                <div (click)=\"productAction($event, item, 'likes')\">\r\n                    <span class=\"action-count\">{{item.payload.doc.data().likes}}</span>\r\n                    <clr-icon shape=\"heart\" class=\"is-solid is-highlight\" title=\"likes\"></clr-icon>\r\n                </div>\r\n                <div>\r\n                    <span class=\"action-count\">{{item.payload.doc.data().views}}</span>\r\n                    <clr-icon shape=\"eye\" class=\"is-solid is-highlight\" title=\"views\"></clr-icon>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"clr-col-sm-12 clr-col-md-6 clr-col-lg-4 clr-col-xl-3\" *ngFor=\"let item of productList; let i = index\">\r\n    <!--Block Element and Modifer naming conventions-->\r\n    <div class=\"product-wrapper\">\r\n        <div class=\"product-item\">\r\n            <div class=\"product-item__image\">\r\n                <!--Within this is the Function OpenLightbox, which is the action of clicking on this image\r\n                and then the picture will display at its true size. It will also display its description beneath it-->\r\n                <span role=\"tooltip\" aria-haspopup=\"true\" class=\"tooltip tooltip-md\">\r\n                    <img class=\"product-img\" src=\"./{{item.payload.doc.data().productPhoto}}\"\r\n                        alt={{item.payload.doc.data().productDescription}}\r\n                        (click)=\"productAction($event, item, 'views'); openLightbox(item, i)\" />\r\n                    <span class=\"tooltip-content\">Click me to see the picture</span>\r\n                </span>\r\n\r\n            </div>\r\n            <div class=\"product-item__name\">\r\n                <span role=\"tooltip\" aria-haspopup=\"true\" class=\"tooltip tooltip-md\">\r\n                    <a\r\n                        routerLink=\"/image/{{item.payload.doc.data().productID}}\">{{item.payload.doc.data().productName}}</a>\r\n                    <span class=\"tooltip-content\">Click me to comment on my picture!</span>\r\n                </span>\r\n                <div>\r\n                    <span role=\"tooltip\" aria-haspopup=\"true\" class=\"tooltip tooltip-md\">\r\n                        <span class=\"action-count\">{{item.payload.doc.data().views}}</span>\r\n                        <clr-icon shape=\"eye\" class=\"is-solid is-highlight\" title=\"views\"></clr-icon>\r\n                        <span class=\"tooltip-content\">Total view count</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n            <div class=\"product-item__actions\">\r\n                <!-- <div (click)=\"productAction($event, item, 'likes')\">\r\n                    <span class=\"action-count\">{{item.payload.doc.data().likes}}</span>\r\n                    <clr-icon shape=\"heart\" class=\"is-solid is-highlight\" title=\"likes\"></clr-icon>\r\n                </div> -->\r\n                <div>\r\n                    <!--This click function adds the product to the arraylist cartItem, passing the item-->\r\n                    <span role=\"tooltip\" aria-haspopup=\"true\" class=\"tooltip tooltip-md\">\r\n                        <button class=\"btn btn-primary btn-block\" (click)=\"addProductToCart(item)\">Add To Cart</button>\r\n                        <span class=\"tooltip-content\">Add To Cart</span>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n<!-- <clr-icon shape=\"shopping-bag\" class=\"is-solid is-highlight\" (click)=\"addProductToCart(item)\">\r\n    </clr-icon>\r\n    <span class=\"tooltip-content\">Add To Cart</span> -->");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/shopping-cart/shopping-cart.component.html": 
@@ -99,7 +99,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!--So any time you see *ngIf=\" | async\" its Redux returning the observable angular and processes\r\nit in the view using the async\r\nLiterally, the Redux Store is \"listening\" for a change. The Async pipe listens for the change and auto subscribes in the view\r\nReference: https://blog.angular-university.io/angular-reactive-templates/-->\r\n\r\n<!--Within this shopping cart, you see the html to set-up what the cart will look like. Eventually, I would like this to pull\r\nup in a new page-like Amazon or Etsy. For this project, I set it up to open up on a click on the shopping cart icon in the nav bar.\r\nIt displays the product, the price, description, and qty. It also displays the Purchase Button.\r\nIn the next project, my goal is to include icons which increase and decrese qty, another button to remove products-->\r\n<div class=\"shopping-cart\" *ngIf=\"showCart | async\">\r\n    <div class=\"shopping-cart__list\">\r\n        <ul class=\"list-items\">\r\n            <li class=\"list-item\" *ngFor=\"let item of cartItems | async\">\r\n                <div class=\"list-item__namePrice\">\r\n                    <div class=\"d-flex d-flex__center-sb product-info\">\r\n                        <!--The {{}} are interpolation. In Angular there are lots of different ways to use them. Here\r\n                        its saying I want the item in the row in the array and the productName or the productPrice is the array property-->\r\n                        <span>{{item.productName}}</span> \r\n                        <span>{{item.productPrice}}</span>\r\n                    </div>\r\n                    <div>\r\n                        <!--Reference for interpolation: https://angular.io/guide/template-syntax-->\r\n                        <span>QTY: {{item.cartQty}}</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"list-item__desc\">\r\n                    <span>{{item.productDescription}}</span>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n    <!--This class is the actions of the cart. The only action in the cart currently is the button.\r\n        It's saying that if the array of cartItems(which Tyler, this array can be found in the cart array in the redux store) \r\n        is greater than 0, to display the the purchase button (if not, don't display the button). If the user clicks the button,\r\n        the function clearCart() will fire. Although at this point, clearCart() is not what I eventually want this button to do, \r\n        currently, it makes it looks like the user purchases the photos without actually putting in their info.-->\r\n    <div class=\"shopping-cart__actions\">\r\n            <button *ngIf=\"(cartItems | async).length > 0\" class=\"btn btn-primary btn-block\" (click)=\"clearCart()\">Purchase</button>\r\n            <!-- <button *ngIf=\"cartItems.length > 0\" class=\"btn btn-primary btn-block\" (click)=\"clearCart()\">Purchase</button> -->\r\n    </div>\r\n</div>\r\n\r\n");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!--So any time you see *ngIf=\" | async\" its Redux returning the observable angular and processes\r\nit in the view using the async\r\nLiterally, the Redux Store is \"listening\" for a change. The Async pipe listens for the change and auto subscribes in the view\r\nReference: https://blog.angular-university.io/angular-reactive-templates/-->\r\n\r\n<!--Within this shopping cart, you see the html to set-up what the cart will look like. Eventually, I would like this to pull\r\nup in a new page-like Amazon or Etsy. For this project, I set it up to open up on a click on the shopping cart icon in the nav bar.\r\nIt displays the product, the price, description, and qty. It also displays the Purchase Button.\r\nIn the next project, my goal is to include icons which increase and decrese qty, another button to remove products-->\r\n<div class=\"shopping-cart\" *ngIf=\"showCart | async\">\r\n    <div class=\"shopping-cart__list\">\r\n        <ul class=\"list-items\">\r\n            <li class=\"list-item\" *ngFor=\"let item of cartItems | async\">\r\n                <div class=\"list-item__namePrice\">\r\n                    <div class=\"d-flex d-flex__center-sb product-info\">\r\n                        <!--The {{}} are interpolation. In Angular there are lots of different ways to use them. Here\r\n                        its saying I want the item in the row in the array and the productName or the productPrice is the array property-->\r\n                        <span>{{item.payload.doc.data().productName}}</span> \r\n                        <span>{{item.payload.doc.data().productPrice}}</span>\r\n                    </div>\r\n                    <div>\r\n                        <!--Reference for interpolation: https://angular.io/guide/template-syntax-->\r\n                        <span>QTY: {{item.cartQty}}</span>\r\n                    </div>\r\n                </div>\r\n                <div class=\"list-item__desc\">\r\n                    <span>{{item.payload.doc.data().productDescription}}</span>\r\n                </div>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n    <!--This class is the actions of the cart. The only action in the cart currently is the button.\r\n        It's saying that if the array of cartItems(which Tyler, this array can be found in the cart array in the redux store) \r\n        is greater than 0, to display the the purchase button (if not, don't display the button). If the user clicks the button,\r\n        the function clearCart() will fire. Although at this point, clearCart() is not what I eventually want this button to do, \r\n        currently, it makes it looks like the user purchases the photos without actually putting in their info.-->\r\n    <div class=\"shopping-cart__actions\">\r\n            <button *ngIf=\"(cartItems | async).length > 0\" class=\"btn btn-primary btn-block\" (click)=\"clearCart()\">Purchase</button>\r\n            <!-- <button *ngIf=\"cartItems.length > 0\" class=\"btn btn-primary btn-block\" (click)=\"clearCart()\">Purchase</button> -->\r\n    </div>\r\n</div>\r\n\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/about-me/about-me.component.html": 
@@ -121,7 +121,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n        <div class=\"clr-row\">\r\n            <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n                <h1>Dashboard</h1>\r\n            </div>\r\n            <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n                <!-- #f is used to shorthand in order to access the ngForm model in the view state -->\r\n \r\n            </div>\r\n        </div>\r\n    </div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n        <div class=\"clr-row\">\r\n            <div class=\"clr-col-sm-12\">\r\n                <h1>Dashboard</h1>\r\n            </div>\r\n            <div class=\"clr-col-sm-12 clr-col-md-4\">\r\n                <div class=\"clr-col-sm-12\" *ngIf=\"forumData.length > 0\">\r\n                        <h3>User Posts</h3>\r\n                    </div>\r\n                    <div class=\"clr-col-sm-12\" *ngFor=\"let entry of forumData\">\r\n                        <div class=\"clr-row\">\r\n                            <div class=\"clr-col-md-12\">\r\n                                <div class=\"card\">\r\n                                    <div class=\"card-block\">\r\n            \r\n                                        <div class=\"card-text\">\r\n                                            {{entry?.payload?.doc?.data().comments}}\r\n                                        </div>\r\n                                    </div>\r\n                                    <div class=\"card-footer\">\r\n                                        <button class=\"btn btn-sm btn-link\" disabled>\r\n                                            <span>Likes: {{entry?.payload?.doc?.data().likes}}</span>\r\n                                        </button>\r\n                                        <button class=\"btn btn-sm btn-link\" disabled>\r\n                                            <span>Dislikes: {{entry?.payload?.doc?.data().dislikes}}</span>\r\n                                        </button>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n            </div>\r\n            <div class=\"clr-col-sm-12 clr-col-md-8\" >\r\n                <div class=\"clr-row\">\r\n                    <div class=\"clr-col-sm-6\">\r\n                        <div class=\"card\">\r\n                            <div class=\"card-block\">\r\n                                <div class=\"card-title\">\r\n                                    Forum Likes\r\n                                </div>\r\n                                <div class=\"card-count\">\r\n                                    {{likeTotal}}\r\n                                </div>\r\n                            </div>\r\n                           \r\n                        </div>\r\n                    </div>\r\n                    <div class=\"clr-col-sm-6\">\r\n                        <div class=\"card\">\r\n                            <div class=\"card-block\">\r\n                                <div class=\"card-title\">\r\n                                    Forum Dislikes\r\n                                </div>\r\n                                  <div class=\"card-count\">\r\n                                    {{dislikeTotal}}\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n\r\n                </div>\r\n                <div class=\"clr-row\">\r\n                    <div class=\"clr-col-sm-12\">\r\n                        <h3 class=\"badge-likes-title\">Earned Like Badges</h3>\r\n                        <ng-container *ngFor=\"let item of badgeArray\">\r\n                            <span class=\"badge\" \r\n                                [class.badge-purple]=\"item == 5\" \r\n                                [class.badge-blue]=\"item == 10\"\r\n                                [class.badge-success]=\"item == 15\">\r\n                                {{item}} - \r\n                                <span *ngIf=\"item == 5\"> Cool Cool</span>\r\n                                <span *ngIf=\"item == 10\"> Awesome</span>\r\n                                <span *ngIf=\"item == 15\"> Spectacular</span>\r\n                                <span *ngIf=\"item == 20\"> Holy Comments Batman!</span>\r\n                            \r\n                            </span>\r\n                        </ng-container>\r\n                    </div>\r\n                    <div class=\"clr-col-sm-12 mt-1\">\r\n                        <h3 class=\"badge-likes-title\">Earned Dislike Badges</h3>\r\n                        <ng-container *ngFor=\"let item of dislikeBadgeArray\">\r\n                            <span class=\"badge badge-danger\">\r\n                                {{item}} - \r\n                                <span *ngIf=\"item == 5\">Yikes</span>\r\n                                <span *ngIf=\"item == 10\">Woah</span>\r\n                                <span *ngIf=\"item == 15\">Probably need to fix something</span>\r\n                                <span *ngIf=\"item == 20\"><a href=\"https://youtu.be/YSvN3upoLDU\" target=\"_blank\">Shame Shame Shame</a></span>\r\n                                <span *ngIf=\"item == 25\">Why you being so mean!?</span>\r\n                            </span>\r\n                        </ng-container>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/error/error.component.html": 
@@ -143,7 +143,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<!-- https://v2.clarity.design/grid -->\r\n<div class=\"view-wrapper\">\r\n    <div class=\"clr-row clr-justify-content-end mb-1\">\r\n        <div class=\"clr-col-sm-6 clr-offset-sm-6\">\r\n            <div class=\"d-flex d-flex__row d-flex__center-end\">\r\n                <div class=\"dropdown\" [class.open]=\"openDropdown\">\r\n                    <button class=\"dropdown-toggle btn btn-primary-outline\" type=\"button\" (click)=\"toggleFilterBtn()\">\r\n                        Filter\r\n                        <clr-icon shape=\"caret down\"></clr-icon>\r\n                    </button>\r\n                    <div class=\"dropdown-menu\">\r\n                        <div class=\"dropdown-item\" (click)=\"sendFilterQuery(0)\">Sort A to Z</div>\r\n                        <div class=\"dropdown-item\" (click)=\"sendFilterQuery(1)\">Sort Z to A</div>\r\n                        <div class=\"dropdown-item\" (click)=\"sendFilterQuery(2)\">Sort by most liked</div>\r\n                        <div class=\"dropdown-item\" (click)=\"sendFilterQuery(3)\">Sort by most views</div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <app-product-display class=\"clr-row\" [products]=\"items\" (productSelected)=\"productSelected($event)\">\r\n    </app-product-display>\r\n</div>\r\n\r\n\r\n<!-- <span *ngIf=\"items.length > 0; else emptyContents\"></span>\r\n<span *ngFor=\"let item of items\">\r\n    {{item.name}}\r\n    {{item.value}}\r\n</span>\r\n\r\n<ng-template #emptyContents>\r\n    No items in array\r\n</ng-template> -->");
+            /* harmony default export */ __webpack_exports__["default"] = ("<!-- https://v2.clarity.design/grid -->\r\n<div class=\"view-wrapper\">\r\n    <div class=\"clr-row clr-justify-content-end mb-1\">\r\n        <div class=\"clr-col-sm-6 clr-offset-sm-6\">\r\n            <div class=\"d-flex d-flex__row d-flex__center-end\">\r\n                <div class=\"dropdown\" [class.open]=\"openDropdown\">\r\n                    <button class=\"dropdown-toggle btn btn-primary-outline\" type=\"button\" (click)=\"toggleFilterBtn()\">\r\n                        Filter\r\n                        <clr-icon shape=\"caret down\"></clr-icon>\r\n                    </button>\r\n                    <div class=\"dropdown-menu\">\r\n                        <div class=\"dropdown-item\" (click)=\"sendFilterQuery(0)\">Sort A to Z</div>\r\n                        <div class=\"dropdown-item\" (click)=\"sendFilterQuery(1)\">Sort Z to A</div>\r\n                        <!-- <div class=\"dropdown-item\" (click)=\"sendFilterQuery(2)\">Sort by most liked</div> -->\r\n                        <div class=\"dropdown-item\" (click)=\"sendFilterQuery(3)\">Sort by most views</div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <app-product-display class=\"clr-row\" [products]=\"items\" (productSelected)=\"productSelected($event)\">\r\n    </app-product-display>\r\n</div>\r\n\r\n<!--This Modal opens when the user first uses teh website to tell them about it.-->\r\n<clr-modal [(clrModalOpen)]=\"opened\" [clrModalClosable]=\"false\">\r\n    <h3 class=\"modal-title\">Welcome to TimSnopek.Com</h3>\r\n    <div class=\"modal-body\">\r\n        <p>Welcome to my Photography Website! You might be a digital photographer, or a film\r\n            snob, but all are welcome. I post the news in photos from Southeastern Wisconsin.\r\n            Check out my photos, make some comments, sign-up for my newsletter or \r\n            earn some badges. \r\n\r\n            Thanks for coming out!</p>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-primary\" (click)=\"closedDialog()\">\r\n            Okay\r\n        </button>\r\n    </div>\r\n</clr-modal>\r\n\r\n\r\n\r\n<!-- <span *ngIf=\"items.length > 0; else emptyContents\"></span>\r\n<span *ngFor=\"let item of items\">\r\n    {{item.name}}\r\n    {{item.value}}\r\n</span>\r\n\r\n<ng-template #emptyContents>\r\n    No items in array\r\n</ng-template> -->");
+            /***/ 
+        }),
+        /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/image/image.component.html": 
+        /*!****************************************************************************************!*\
+          !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/views/image/image.component.html ***!
+          \****************************************************************************************/
+        /*! exports provided: default */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony default export */ __webpack_exports__["default"] = ("<!-- https://v2.clarity.design/grid -->\r\n<div class=\"view-wrapper\">\r\n    <div class=\"clr-row clr-justify-content-end mb-1\">\r\n        <div class=\"clr-col-sm-12\">\r\n            <img src=\"{{product?.productPhoto}}\" style=\"width: 100%; height: auto;\" alt=\"{{product?.productName}}\">\r\n            <div class=\"product-item__name\">\r\n                <h1>{{product?.productName}}</h1>\r\n                <p>{{product?.productDescription}}</p>\r\n            </div>\r\n        </div>\r\n        <div class=\"clr-col-sm-12 p-0\" *ngIf=\"user !== null\">\r\n            <form #f=\"ngForm\" (ngSubmit)=\"submitForum(f)\">\r\n                <div class=\"clr-row\">\r\n                    <div class=\"clr-col-sm-12\">\r\n                        <clr-textarea-container>\r\n                            <label>Comments</label>\r\n                            <textarea clrTextarea style=\"width: 100%;\" [(ngModel)]=\"comment\" name=\"comment\" required></textarea>\r\n                        </clr-textarea-container>\r\n                    </div>\r\n                    <div class=\"clr-col-sm-12\">\r\n                        <button class=\"btn btn-primary\">Submit</button>\r\n                    </div>\r\n                </div>\r\n            </form>\r\n        </div>\r\n        <div class=\"clr-col-sm-12\" *ngIf=\"forumData.length > 0\">\r\n            <h3>Forum</h3>\r\n        </div>\r\n        <div class=\"clr-col-sm-12\" *ngFor=\"let entry of forumData\">\r\n            <div class=\"clr-row\">\r\n                <div class=\"clr-col-lg-5 clr-col-md-8 clr-col-12\">\r\n                    <div class=\"card\">\r\n                        <div class=\"card-block\">\r\n\r\n                            <div class=\"card-text\">\r\n                                {{entry?.payload?.doc?.data().comments}}\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"card-footer\">\r\n                            <span role=\"tooltip\" aria-haspopup=\"true\" class=\"tooltip tooltip-md\">\r\n                            <button class=\"btn btn-sm btn-link\" (click)=\"addLikeToForumComment(entry)\"><clr-icon shape=\"thumbs-up\"></clr-icon> Like</button>\r\n                            <button class=\"btn btn-sm btn-link\" (click)=\"addDislikeToForumComment(entry)\">\r\n                                <clr-icon shape=\"thumbs-down\"></clr-icon> DisLike\r\n                            </button>\r\n                            <span class=\"tooltip-content\">Click me to like or dislike this comment</span>\r\n                        </span>\r\n                            <!-- <button class=\"btn btn-sm btn-link\">\r\n                                    <clr-icon shape=\"star\" (click)=\"setStarRating(1, entry)\" [class.is-solid]=\"entry?.payload?.doc?.data().rating == 1 || entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5\"></clr-icon>\r\n                                    <clr-icon shape=\"star\" (click)=\"setStarRating(2, entry)\" [class.is-solid]=\"entry?.payload?.doc?.data().rating == 2 || entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5\"></clr-icon>\r\n                                    <clr-icon shape=\"star\" (click)=\"setStarRating(3, entry)\" [class.is-solid]=\"entry?.payload?.doc?.data().rating == 3 || entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5\"></clr-icon>\r\n                                    <clr-icon shape=\"star\" (click)=\"setStarRating(4, entry)\" [class.is-solid]=\"entry?.payload?.doc?.data().rating == 4 || entry?.payload?.doc?.data().rating == 5\"></clr-icon>\r\n                                    <clr-icon shape=\"star\" (click)=\"setStarRating(5, entry)\" [class.is-solid]=\"entry?.payload?.doc?.data().rating == 5\"></clr-icon>\r\n                            </button> -->\r\n                            <button class=\"btn btn-sm btn-link\" disabled>\r\n                                <span>Likes: {{entry?.payload?.doc?.data().likes}}</span>\r\n                            </button>\r\n                            <button class=\"btn btn-sm btn-link\" disabled>\r\n                                <span>Dislikes: {{entry?.payload?.doc?.data().dislikes}}</span>\r\n                            </button>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/login/login.component.html": 
@@ -154,7 +165,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n        <div class=\"clr-row\">\r\n            <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n                <h1>Login</h1>\r\n            </div>\r\n            <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n                <!-- #f is used to shorthand in order to access the ngForm model in the view state -->\r\n                <form class=\"clr-form\" #f=\"ngForm\" (ngSubmit)=\"login(f)\">\r\n                    <div class=\"clr-form-control\">\r\n                        <label for=\"example\" class=\"clr-control-label\">Email</label>\r\n                        <div class=\"clr-control-container\">\r\n                            <div class=\"clr-input-wrapper\">\r\n                                <input type=\"text\" id=\"email\" name=\"email\" required [(ngModel)]=\"formModel.email\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"clr-form-control\">\r\n                        <label for=\"example\" class=\"clr-control-label\">Password</label>\r\n                        <div class=\"clr-control-container\">\r\n                            <div class=\"clr-input-wrapper\">\r\n                                <input type=\"text\" id=\"password\" name=\"password\" required [(ngModel)]=\"formModel.password\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                                <!-- <clr-icon class=\"clr-validate-icon\" shape=\"exclamation-circle\"></clr-icon> -->\r\n                            </div>\r\n                            <!-- <span class=\"clr-subtext\">Error message</span> -->\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"clr-form-control\">\r\n                        <button class=\"btn btn-primary\" [disabled]=\"!f.valid\">Submit</button>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n        <div class=\"clr-row\">\r\n            <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n                <h1>Login</h1>\r\n            </div>\r\n            <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n                <div class=\"alert alert-danger\" role=\"alert\" *ngIf=\"error !== ''\">\r\n                    <div class=\"alert-items\">\r\n                        <div class=\"alert-item static\">\r\n                            <div class=\"alert-icon-wrapper\">\r\n                                <clr-icon class=\"alert-icon\" shape=\"exclamation-circle\"></clr-icon>\r\n                            </div>\r\n                            <span class=\"alert-text\">\r\n                                {{error}}\r\n                            </span>\r\n                        </div>                             \r\n                    </div>\r\n                </div>\r\n                <!-- #f is used to shorthand in order to access the ngForm model in the view state -->\r\n                <form class=\"clr-form\" #f=\"ngForm\" (ngSubmit)=\"login(f)\">\r\n                    <div class=\"clr-form-control\">\r\n                        <label for=\"example\" class=\"clr-control-label\">Email</label>\r\n                        <div class=\"clr-control-container\">\r\n                            <div class=\"clr-input-wrapper\">\r\n                                <input type=\"text\" id=\"email\" name=\"email\" required [(ngModel)]=\"formModel.email\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                            </div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"clr-form-control\">\r\n                        <label for=\"example\" class=\"clr-control-label\">Password</label>\r\n                        <div class=\"clr-control-container\">\r\n                            <div class=\"clr-input-wrapper\">\r\n                                <input type=\"text\" id=\"password\" name=\"password\" required [(ngModel)]=\"formModel.password\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                                <!-- <clr-icon class=\"clr-validate-icon\" shape=\"exclamation-circle\"></clr-icon> -->\r\n                            </div>\r\n                            <!-- <span class=\"clr-subtext\">Error message</span> -->\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"clr-form-control\">\r\n                        <button class=\"btn btn-primary\" [disabled]=\"!f.valid\">Submit</button>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/newsletter/newsletter.component.html": 
@@ -165,7 +176,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n        <div class=\"clr-row clr-justify-content-end mb-1\">\r\n            <div class=\"clr-col-sm-12\">\r\n                <p>So, this page is not finished-it will be for the next project. I want to\r\n                    have users sign-up for a Newsletter. Massive errors in the FOOTER of all things\r\n                    pushed back my timeline immensely. Because I didn't want to go and hide this \r\n                    page, I left it as it.\r\n                    Hope you find the Easter Egg!\r\n                </p>\r\n            </div>\r\n        </div>\r\n    </div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n    <div class=\"clr-row\">\r\n        <div class=\"clr-col-sm-12\">\r\n            <h1>Newsletter</h1>\r\n        </div>\r\n        <div class=\"clr-col-sm-6 clr-col-md-4 clr-col-lg-3\">\r\n            <!-- #f is used to shorthand in order to access the ngForm model in the view state -->\r\n            <form class=\"clr-form\" #f=\"ngForm\" (ngSubmit)=\"submitForm(f)\">\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">First Name</label>\r\n                    <div class=\"clr-control-container\" [class.clr-error]=\"!f.valid\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"firstName\" name=\"firstName\" required\r\n                                [(ngModel)]=\"formModel.firstName\" class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Last Name</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"lastName\" name=\"lastName\" required [(ngModel)]=\"formModel.lastName\"\r\n                                class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Email</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"email\" name=\"email\" required [(ngModel)]=\"formModel.email\"\r\n                                class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <button class=\"btn btn-primary\" [disabled]=\"!f.valid\">Submit</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n                <div class=\"clr-col-sm-6 clr-sm-6\">\r\n\r\n                    <h2>Do you want to be at the right place at the right time?</h2>\r\n                    <p>Would you like news sent right to your email as it happens?\r\n                        Do you want to know what is going on in Waukesha county?\r\n                        Join my Newsletter emailing list and have everything sent directly to your email.\r\n                        If I'm at the right place at the right time, so can you!\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/registration/registration.component.html": 
@@ -176,7 +187,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n    <div class=\"clr-row\">\r\n        <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n            <h1>Registration</h1>\r\n        </div>\r\n        <div class=\"clr-col-sm-6 clr-offset-sm-3\">\r\n            <!-- #f is used to shorthand in order to access the ngForm model in the view state -->\r\n            <form class=\"clr-form\" #f=\"ngForm\" (ngSubmit)=\"submitForm(f)\">\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">First Name</label>\r\n                    <div class=\"clr-control-container\" [class.clr-error]=\"!f.valid\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"firstName\" name=\"firstName\" required [(ngModel)]=\"formModel.firstName\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Last Name</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"lastName\" name=\"lastName\" required [(ngModel)]=\"formModel.lastName\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Email</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"email\" name=\"email\" required [(ngModel)]=\"formModel.email\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Password</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"password\" name=\"password\" required [(ngModel)]=\"formModel.password\" placeholder=\"Example Input\" class=\"clr-input\">\r\n                            <!-- <clr-icon class=\"clr-validate-icon\" shape=\"exclamation-circle\"></clr-icon> -->\r\n                        </div>\r\n                        <!-- <span class=\"clr-subtext\">Error message</span> -->\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <button class=\"btn btn-primary\" [disabled]=\"!f.valid\">Submit</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>");
+            /* harmony default export */ __webpack_exports__["default"] = ("<div class=\"view-wrapper\">\r\n    <div class=\"clr-row\">\r\n        <div class=\"clr-col-sm-6\">\r\n            <h1>Registration</h1>\r\n        </div>\r\n    </div>\r\n    <div class=\"clr-row\">\r\n        <!-- <div class=\"clr-col-sm-6 clr-offset-sm-3\"> -->\r\n        <!-- #f is used to shorthand in order to access the ngForm model in the view state -->\r\n        <div class=\"clr-col-sm-6 clr-col-md-4 clr-col-lg-3\">\r\n            <form class=\"clr-form\" #f=\"ngForm\" (ngSubmit)=\"submitForm(f)\">\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">First Name</label>\r\n                    <div class=\"clr-control-container\" [class.clr-error]=\"!f.valid\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"firstName\" name=\"firstName\" required\r\n                                [(ngModel)]=\"formModel.firstName\" class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Last Name</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"lastName\" name=\"lastName\" required [(ngModel)]=\"formModel.lastName\"\r\n                                class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Email</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"email\" name=\"email\" required [(ngModel)]=\"formModel.email\"\r\n                                class=\"clr-input\">\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <label for=\"example\" class=\"clr-control-label\">Password</label>\r\n                    <div class=\"clr-control-container\">\r\n                        <div class=\"clr-input-wrapper\">\r\n                            <input type=\"text\" id=\"password\" name=\"password\" required [(ngModel)]=\"formModel.password\"\r\n                                class=\"clr-input\">\r\n                            <!-- <clr-icon class=\"clr-validate-icon\" shape=\"exclamation-circle\"></clr-icon> -->\r\n                        </div>\r\n                        <!-- <span class=\"clr-subtext\">Error message</span> -->\r\n                    </div>\r\n                </div>\r\n                <div class=\"clr-form-control\">\r\n                    <button class=\"btn btn-primary\" [disabled]=\"!f.valid\">Submit</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n        <div class=\"clr-col-sm-6 clr-sm-6\">\r\n            <h2>Join to Post</h2>\r\n            <p>As any good photographer knows, a picture is worth a thousand words. Well, I want to hear your words.\r\n                Register for my site and you'll be able to:</p>\r\n            <ul>\r\n                <li>Comment on photos</li>\r\n                <li>Like other people's posts</li>\r\n                <li>Earn Badges for your Comments!</li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n");
             /***/ 
         }),
         /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/shop/shop.component.html": 
@@ -511,6 +522,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony import */ var _views_admin_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./views/admin/dashboard/dashboard.component */ "./src/app/views/admin/dashboard/dashboard.component.ts");
             /* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
             /* harmony import */ var _guards_app_guard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./guards/app.guard */ "./src/app/guards/app.guard.ts");
+            /* harmony import */ var _views_image_image_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./views/image/image.component */ "./src/app/views/image/image.component.ts");
             //this is where I set up the routes for my website. By creating the paths here
             //I easily could use the RouterLink in the rest of my website.
             var routes = [
@@ -519,6 +531,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 { path: 'about-me', component: _views_about_me_about_me_component__WEBPACK_IMPORTED_MODULE_5__["AboutMeComponent"] },
                 { path: 'newsletter', component: _views_newsletter_newsletter_component__WEBPACK_IMPORTED_MODULE_6__["NewsletterComponent"] },
                 { path: 'shop', component: _views_shop_shop_component__WEBPACK_IMPORTED_MODULE_7__["ShopComponent"] },
+                { path: 'image/:id', component: _views_image_image_component__WEBPACK_IMPORTED_MODULE_12__["ImageComponent"] },
                 { path: 'registration', component: _views_registration_registration_component__WEBPACK_IMPORTED_MODULE_8__["RegistrationComponent"] },
                 { path: 'login', component: _views_login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"] },
                 { path: 'admin/dashboard', component: _views_admin_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"], canActivate: [_guards_app_guard__WEBPACK_IMPORTED_MODULE_11__["AppGuard"]] },
@@ -546,7 +559,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ("body {\n  overflow-x: hidden;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNJLGtCQUFBO0FDRkoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL3RoaXMgaXMgdGhlIHNjc3MgcGFnZSBmb3IgdGhlIGVudGlyZSB3ZWJzaXRlLiBUaGUgb25seSB0aGluZyBJIGhhdmUgaW4gaGVyZVxyXG4vL2lzIHRvIGhpZGUgdGhlIHNjcm9sbCBiYXIgYWNyb3NzIHRoZSBib3R0b20gd2hlbiB0aGUgd2Vic2l0ZSBpcyBiZWluZyByZXNpemVkXHJcblxyXG5ib2R5IHtcclxuICAgIG92ZXJmbG93LXg6IGhpZGRlbjtcclxufSIsImJvZHkge1xuICBvdmVyZmxvdy14OiBoaWRkZW47XG59Il19 */");
+            /* harmony default export */ __webpack_exports__["default"] = ("body {\n  overflow-x: hidden;\n}\n\n.p-0 {\n  padding: 0 !important;\n}\n\n.card-count {\n  font-size: 40px;\n  text-align: center;\n  font-weight: 800;\n  padding: 0.5em 0;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxhcHAuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2FwcC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFHQTtFQUNJLGtCQUFBO0FDRko7O0FES0E7RUFDSSxxQkFBQTtBQ0ZKOztBREtBO0VBQ0ksZUFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtBQ0ZKIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy90aGlzIGlzIHRoZSBzY3NzIHBhZ2UgZm9yIHRoZSBlbnRpcmUgd2Vic2l0ZS4gVGhlIG9ubHkgdGhpbmcgSSBoYXZlIGluIGhlcmVcclxuLy9pcyB0byBoaWRlIHRoZSBzY3JvbGwgYmFyIGFjcm9zcyB0aGUgYm90dG9tIHdoZW4gdGhlIHdlYnNpdGUgaXMgYmVpbmcgcmVzaXplZFxyXG5cclxuYm9keSB7XHJcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XHJcbn1cclxuXHJcbi5wLTB7XHJcbiAgICBwYWRkaW5nOiAwIWltcG9ydGFudDtcclxufVxyXG5cclxuLmNhcmQtY291bnQge1xyXG4gICAgZm9udC1zaXplOiA0MHB4O1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgZm9udC13ZWlnaHQ6IDgwMDtcclxuICAgIHBhZGRpbmc6IC41ZW0gMDtcclxufSIsImJvZHkge1xuICBvdmVyZmxvdy14OiBoaWRkZW47XG59XG5cbi5wLTAge1xuICBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7XG59XG5cbi5jYXJkLWNvdW50IHtcbiAgZm9udC1zaXplOiA0MHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGZvbnQtd2VpZ2h0OiA4MDA7XG4gIHBhZGRpbmc6IDAuNWVtIDA7XG59Il19 */");
             /***/ 
         }),
         /***/ "./src/app/app.component.ts": 
@@ -622,6 +635,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony import */ var _views_login_login_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./views/login/login.component */ "./src/app/views/login/login.component.ts");
             /* harmony import */ var _service_app_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./service/app.service */ "./src/app/service/app.service.ts");
             /* harmony import */ var _guards_app_guard__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./guards/app.guard */ "./src/app/guards/app.guard.ts");
+            /* harmony import */ var _views_image_image_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./views/image/image.component */ "./src/app/views/image/image.component.ts");
             //This page is the modules used throughout my website. I had to declare everything below-
             //components, modules, and providers and then import in the respective libraries.
             var AppModule = /** @class */ (function () {
@@ -646,6 +660,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         _components_product_display_product_display_component__WEBPACK_IMPORTED_MODULE_13__["ProductDisplayComponent"],
                         _views_about_me_about_me_component__WEBPACK_IMPORTED_MODULE_18__["AboutMeComponent"],
                         _views_shop_shop_component__WEBPACK_IMPORTED_MODULE_19__["ShopComponent"],
+                        _views_image_image_component__WEBPACK_IMPORTED_MODULE_33__["ImageComponent"],
                         _views_newsletter_newsletter_component__WEBPACK_IMPORTED_MODULE_20__["NewsletterComponent"],
                         _components_shopping_cart_shopping_cart_component__WEBPACK_IMPORTED_MODULE_25__["ShoppingCartComponent"],
                         _views_registration_registration_component__WEBPACK_IMPORTED_MODULE_27__["RegistrationComponent"],
@@ -726,7 +741,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = (".header {\n  background: #fff;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 2em;\n  position: fixed;\n  width: 100%;\n  background: #fff;\n  z-index: 1500;\n  top: 0;\n  left: 0;\n}\n\n.header .branding, header .branding {\n  position: relative;\n}\n\n.brand-logo {\n  max-height: 80px;\n  width: auto;\n  position: fixed;\n  top: 10px;\n}\n\n.nav-link {\n  color: #333 !important;\n}\n\n.header-cart {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 65px;\n}\n\nspan.cart-qty {\n  color: #0077B8;\n}\n\nclr-icon.is-highlight {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxoZWFkZXJcXGhlYWRlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksZ0JBQUE7RUFDQSw2QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxNQUFBO0VBQ0EsT0FBQTtBQ0hKOztBRE1BO0VBQ0ksa0JBQUE7QUNISjs7QURNQTtFQUNJLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7RUFDQSxTQUFBO0FDSEo7O0FETUE7RUFDSSxzQkFBQTtBQ0hKOztBRE1BO0VBQ0ksYUFBQTtFQUNBLG1CQUFBO0VBQ0EsdUJBQUE7RUFDQSxXQUFBO0FDSEo7O0FET0E7RUFDSSxjQUFBO0FDSko7O0FET0E7RUFDSSxlQUFBO0FDSkoiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL015IGhlYWRlciB3YXMgc2ltcGxpc3RpYy4gSSB3YW50ZWQgaXQgdG8gYmUgY2xlYW4gYW5kIHNpbXBsZS4gV2hlbiBJIGZpcnN0IHN0YXJ0ZWQgYnVpbGRpbmcsIHRoZSBoZWFkZXIgd2FzIGdvaW5nIFxuLy90byBiZSBvbiB0aGUgbGVmdCBzaWRlIGJlZm9yZSBJIG1vdmVkIGl0IGJhY2sgdXAgdG8gdGhlIHRvcC4gSXQgbWlnaHQgcmV0dXJuIHRvIHRoZSBsZWZ0IHNpZGUgZHVyaW5nIHRoZSBzZWNvbmQgXG4vL3BhcnQgb2YgdGhpcyBwcm9qZWN0LlxuXG4uaGVhZGVyIHtcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICAgIG1hcmdpbi1ib3R0b206IDJlbTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICB6LWluZGV4OiAxNTAwO1xuICAgIHRvcDogMDtcbiAgICBsZWZ0OiAwO1xufVxuXG4uaGVhZGVyIC5icmFuZGluZywgaGVhZGVyIC5icmFuZGluZyB7XG4gICAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuXG4uYnJhbmQtbG9nb3tcbiAgICBtYXgtaGVpZ2h0OiA4MHB4O1xuICAgIHdpZHRoOiBhdXRvO1xuICAgIHBvc2l0aW9uOiBmaXhlZDtcbiAgICB0b3A6IDEwcHg7XG59XG5cbi5uYXYtbGlua3tcbiAgICBjb2xvcjogIzMzMyAhaW1wb3J0YW50O1xufVxuXG4uaGVhZGVyLWNhcnR7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIHdpZHRoOiA2NXB4O1xufVxuXG4vL1xuc3Bhbi5jYXJ0LXF0eXtcbiAgICBjb2xvcjogIzAwNzdCODtcbn1cblxuY2xyLWljb24uaXMtaGlnaGxpZ2h0IHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59IiwiLmhlYWRlciB7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICBtYXJnaW4tYm90dG9tOiAyZW07XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgd2lkdGg6IDEwMCU7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIHotaW5kZXg6IDE1MDA7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbn1cblxuLmhlYWRlciAuYnJhbmRpbmcsIGhlYWRlciAuYnJhbmRpbmcge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi5icmFuZC1sb2dvIHtcbiAgbWF4LWhlaWdodDogODBweDtcbiAgd2lkdGg6IGF1dG87XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMHB4O1xufVxuXG4ubmF2LWxpbmsge1xuICBjb2xvcjogIzMzMyAhaW1wb3J0YW50O1xufVxuXG4uaGVhZGVyLWNhcnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgd2lkdGg6IDY1cHg7XG59XG5cbnNwYW4uY2FydC1xdHkge1xuICBjb2xvcjogIzAwNzdCODtcbn1cblxuY2xyLWljb24uaXMtaGlnaGxpZ2h0IHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufSJdfQ== */");
+            /* harmony default export */ __webpack_exports__["default"] = (".header {\n  background: #ffffff;\n  border-bottom: 1px solid #eee;\n  margin-bottom: 2em;\n  position: fixed;\n  width: 100%;\n  z-index: 1500;\n  top: 0;\n  left: 0;\n}\n\n.header .branding, header .branding {\n  position: relative;\n}\n\n.brand-logo {\n  max-height: 80px;\n  width: auto;\n  position: fixed;\n  top: 10px;\n}\n\n.nav-link {\n  color: #333 !important;\n}\n\n.header-cart {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  width: 65px;\n}\n\nspan.cart-qty {\n  color: #0077B8;\n}\n\n.cursor-pointer {\n  cursor: pointer;\n}\n\n@media screen and (max-width: 768px) {\n  .brand-logo {\n    display: none;\n  }\n\n  .header-hamburger-trigger > span, .header-hamburger-trigger > span::after, .header-hamburger-trigger > span::before {\n    background: #333;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxoZWFkZXJcXGhlYWRlci5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUlBO0VBQ0ksbUJBQUE7RUFDQSw2QkFBQTtFQUNBLGtCQUFBO0VBQ0EsZUFBQTtFQUNBLFdBQUE7RUFDQSxhQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7QUNISjs7QURNQTtFQUNJLGtCQUFBO0FDSEo7O0FETUE7RUFDSSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0VBQ0EsU0FBQTtBQ0hKOztBRE1BO0VBQ0ksc0JBQUE7QUNISjs7QURNQTtFQUNJLGFBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsV0FBQTtBQ0hKOztBRE9BO0VBQ0ksY0FBQTtBQ0pKOztBRE9BO0VBQ0ksZUFBQTtBQ0pKOztBRFNBO0VBQ0k7SUFDSSxhQUFBO0VDTk47O0VEU0U7SUFDSSxnQkFBQTtFQ05OO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL2hlYWRlci9oZWFkZXIuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL015IGhlYWRlciB3YXMgc2ltcGxpc3RpYy4gSSB3YW50ZWQgaXQgdG8gYmUgY2xlYW4gYW5kIHNpbXBsZS4gV2hlbiBJIGZpcnN0IHN0YXJ0ZWQgYnVpbGRpbmcsIHRoZSBoZWFkZXIgd2FzIGdvaW5nIFxuLy90byBiZSBvbiB0aGUgbGVmdCBzaWRlIGJlZm9yZSBJIG1vdmVkIGl0IGJhY2sgdXAgdG8gdGhlIHRvcC4gSXQgbWlnaHQgcmV0dXJuIHRvIHRoZSBsZWZ0IHNpZGUgZHVyaW5nIHRoZSBzZWNvbmQgXG4vL3BhcnQgb2YgdGhpcyBwcm9qZWN0LlxuXG4uaGVhZGVyIHtcbiAgICBiYWNrZ3JvdW5kOiAjZmZmZmZmO1xuICAgIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICAgIG1hcmdpbi1ib3R0b206IDJlbTtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgei1pbmRleDogMTUwMDtcbiAgICB0b3A6IDA7XG4gICAgbGVmdDogMDtcbn1cblxuLmhlYWRlciAuYnJhbmRpbmcsIGhlYWRlciAuYnJhbmRpbmcge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cblxuLmJyYW5kLWxvZ297XG4gICAgbWF4LWhlaWdodDogODBweDtcbiAgICB3aWR0aDogYXV0bztcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiAxMHB4O1xufVxuXG4ubmF2LWxpbmt7XG4gICAgY29sb3I6ICMzMzMgIWltcG9ydGFudDtcbn1cblxuLmhlYWRlci1jYXJ0e1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICB3aWR0aDogNjVweDtcbn1cblxuLy9cbnNwYW4uY2FydC1xdHl7XG4gICAgY29sb3I6ICMwMDc3Qjg7XG59XG5cbi5jdXJzb3ItcG9pbnRlcntcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cblxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3NjhweCl7XG4gICAgLmJyYW5kLWxvZ297XG4gICAgICAgIGRpc3BsYXk6IG5vbmU7XG4gICAgfVxuXG4gICAgLmhlYWRlci1oYW1idXJnZXItdHJpZ2dlcj5zcGFuLCAuaGVhZGVyLWhhbWJ1cmdlci10cmlnZ2VyPnNwYW46OmFmdGVyLCAuaGVhZGVyLWhhbWJ1cmdlci10cmlnZ2VyPnNwYW46OmJlZm9yZXtcbiAgICAgICAgYmFja2dyb3VuZDogIzMzMztcbiAgICB9XG59IiwiLmhlYWRlciB7XG4gIGJhY2tncm91bmQ6ICNmZmZmZmY7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjZWVlO1xuICBtYXJnaW4tYm90dG9tOiAyZW07XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgd2lkdGg6IDEwMCU7XG4gIHotaW5kZXg6IDE1MDA7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbn1cblxuLmhlYWRlciAuYnJhbmRpbmcsIGhlYWRlciAuYnJhbmRpbmcge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5cbi5icmFuZC1sb2dvIHtcbiAgbWF4LWhlaWdodDogODBweDtcbiAgd2lkdGg6IGF1dG87XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgdG9wOiAxMHB4O1xufVxuXG4ubmF2LWxpbmsge1xuICBjb2xvcjogIzMzMyAhaW1wb3J0YW50O1xufVxuXG4uaGVhZGVyLWNhcnQge1xuICBkaXNwbGF5OiBmbGV4O1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgd2lkdGg6IDY1cHg7XG59XG5cbnNwYW4uY2FydC1xdHkge1xuICBjb2xvcjogIzAwNzdCODtcbn1cblxuLmN1cnNvci1wb2ludGVyIHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWF4LXdpZHRoOiA3NjhweCkge1xuICAuYnJhbmQtbG9nbyB7XG4gICAgZGlzcGxheTogbm9uZTtcbiAgfVxuXG4gIC5oZWFkZXItaGFtYnVyZ2VyLXRyaWdnZXIgPiBzcGFuLCAuaGVhZGVyLWhhbWJ1cmdlci10cmlnZ2VyID4gc3Bhbjo6YWZ0ZXIsIC5oZWFkZXItaGFtYnVyZ2VyLXRyaWdnZXIgPiBzcGFuOjpiZWZvcmUge1xuICAgIGJhY2tncm91bmQ6ICMzMzM7XG4gIH1cbn0iXX0= */");
             /***/ 
         }),
         /***/ "./src/app/components/header/header.component.ts": 
@@ -742,25 +757,61 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm2015/angular-redux-store.js");
             /* harmony import */ var src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/store/actions */ "./src/app/store/actions.ts");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var src_app_service_app_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/service/app.service */ "./src/app/service/app.service.ts");
             // This is the typescript component page of the Header. When you set this up, you always 
             // import any components you might need. Then you set up your @Component, by listing the metadata
             //selector you are using, and the html and style sheet its attached to.
             var HeaderComponent = /** @class */ (function () {
-                function HeaderComponent(ngRedux) {
+                function HeaderComponent(ngRedux, router, route, appService) {
                     this.ngRedux = ngRedux;
+                    this.router = router;
+                    this.route = route;
+                    this.appService = appService;
+                    if (this.appService.getUser()) {
+                        this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__["ReduxStoreActions"].StoreUser, body: { user: this.appService.getUser() } });
+                        this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__["ReduxStoreActions"].Authenticated, body: { isAuthenticated: true } });
+                    }
                 }
-                HeaderComponent.prototype.ngOnInit = function () { };
+                HeaderComponent.prototype.ngOnInit = function () {
+                    console.log('header comp init');
+                    console.log(this.isAuthenticated);
+                    console.log(this.user);
+                };
                 HeaderComponent.prototype.toggleCart = function () {
                     this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__["ReduxStoreActions"].ShowCart });
+                };
+                HeaderComponent.prototype.toggleNav = function () {
+                    document.querySelector('.main-container').classList.toggle('open-hamburger-menu');
+                };
+                HeaderComponent.prototype.logout = function () {
+                    localStorage.clear();
+                    this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__["ReduxStoreActions"].Authenticated, body: { isAuthenticated: false } });
+                    this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_3__["ReduxStoreActions"].RemoveUser });
+                    if (this.router.url === '/admin/dashboard') {
+                        this.router.navigate(['/']);
+                    }
+                };
+                HeaderComponent.prototype.loginPage = function () {
+                    this.router.navigate(['/login']);
                 };
                 return HeaderComponent;
             }());
             HeaderComponent.ctorParameters = function () { return [
-                { type: _angular_redux_store__WEBPACK_IMPORTED_MODULE_2__["NgRedux"] }
+                { type: _angular_redux_store__WEBPACK_IMPORTED_MODULE_2__["NgRedux"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"] },
+                { type: src_app_service_app_service__WEBPACK_IMPORTED_MODULE_5__["AppService"] }
             ]; };
             tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_redux_store__WEBPACK_IMPORTED_MODULE_2__["select"])(function (s) { return s.totalCartQty; })
             ], HeaderComponent.prototype, "cartQty", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_redux_store__WEBPACK_IMPORTED_MODULE_2__["select"])(function (s) { return s.isAuthenticated; })
+            ], HeaderComponent.prototype, "isAuthenticated", void 0);
+            tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_redux_store__WEBPACK_IMPORTED_MODULE_2__["select"])(function (s) { return s.user; })
+            ], HeaderComponent.prototype, "user", void 0);
             HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'app-header',
@@ -781,7 +832,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         /***/ (function (module, __webpack_exports__, __webpack_require__) {
             "use strict";
             __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = (".product-img {\n  width: 100%;\n  height: auto;\n  min-height: 160px;\n}\n\n.product-item__name {\n  width: 100%;\n  font-weight: 600;\n  padding: 0.15em 0;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.action-count {\n  padding-right: 5px;\n}\n\n.product-item__actions {\n  display: flex;\n  flex-direction: row-reverse;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.product-item__image {\n  max-height: 160px;\n  overflow: hidden;\n}\n\n.product-item {\n  margin: 1.5em 0;\n}\n\nclr-icon.is-solid.is-highlight {\n  cursor: pointer;\n}\n\nimg.product-img {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxwcm9kdWN0LWRpc3BsYXlcXHByb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvcHJvZHVjdC1kaXNwbGF5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVNBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ1JKOztBRFdBO0VBQ0ksV0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtBQ1JKOztBRFdBO0VBQ0ksa0JBQUE7QUNSSjs7QURZQTtFQUNJLGFBQUE7RUFDQSwyQkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7QUNUSjs7QURZQTtFQUNJLGlCQUFBO0VBQ0EsZ0JBQUE7QUNUSjs7QURZQTtFQUNJLGVBQUE7QUNUSjs7QURZQTtFQUNJLGVBQUE7QUNUSjs7QURZQTtFQUNJLGVBQUE7QUNUSiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZHVjdC1kaXNwbGF5L3Byb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi8vVGhlcmUgd2FzIGEgbG90IG9mIHBsYXlpbmcgd2l0aCB0aGUgcHJvZHVjdC1kaXNwbGF5LmNvbXBvbmVudC4gSSB3YXNuJ3Qgc3VyZSBob3cgSSB3YW50ZWQgbXkgcGljdHVyZXMuIEkgd291bGQgZXZlbnR1YWxseVxuLy9yZWFsbHkgbGlrZSB0byBhdHRlbXB0IG1hc29ucnkgd2l0aCBteSBwaG90b3MgKGh0dHBzOi8vd3d3LnNpdGVwb2ludC5jb20vdW5kZXJzdGFuZGluZy1tYXNvbnJ5LWxheW91dC8pIGJ1dCBJIGp1c3QgY291bGRuJ3QgXG4vL2ZpZ3VyZSBpdCBvdXQuIEl0IHdhcyBnb2luZyB0byBiZSB0aGUgbGFzdCB0aGluZyBJIGRpZC4gSSBhbHNvIHdhbnRlZCB0byBmaWd1cmUgb3V0IFBpbnRlcmVzdCdzIG5ld2VzdCB1cGRhdGUsIHdoZXJlXG4vL2FmdGVyIHlvdSBwaW4gc29tZXRoaW5nLCB5b3UgYWN0dWFsbHkgc2VlIGl0IHN3b29zaCBpbnRvIHlvdXIgYWNjb3VudCBpbiB0aGUgdG9wIHJpZ2h0IGNvcm5lci4gSSB3b3VsZCBsb3ZlIHRvIGF0dGVtcHQgYW4gYW5pbWF0aW9uLlxuXG4ucHJvZHVjdC1kaXNwbGF5IHtcblxufVxuXG4ucHJvZHVjdC1pbWd7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiBhdXRvO1xuICAgIG1pbi1oZWlnaHQ6IDE2MHB4O1xufVxuXG4ucHJvZHVjdC1pdGVtX19uYW1lIHtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBmb250LXdlaWdodDogNjAwO1xuICAgIHBhZGRpbmc6IC4xNWVtIDA7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmFjdGlvbi1jb3VudHtcbiAgICBwYWRkaW5nLXJpZ2h0OiA1cHg7XG59XG5cbi8vZmxleC1kaXJlY3Rpb24gaGFzIGJlY29tZSBvbmUgb2YgbXkgZmF2b3JpdGUgU0NTUyB0b29scyB0byBnZXQgbXkgaXRlbXMvdGV4dCB3aGVyZSBJIHdhbnRlZCB0aGVtIHRvIGdvXG4ucHJvZHVjdC1pdGVtX19hY3Rpb25ze1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdy1yZXZlcnNlO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuXG4ucHJvZHVjdC1pdGVtX19pbWFnZSB7XG4gICAgbWF4LWhlaWdodDogMTYwcHg7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLnByb2R1Y3QtaXRlbSB7XG4gICAgbWFyZ2luOiAxLjVlbSAwO1xufVxuXG5jbHItaWNvbi5pcy1zb2xpZC5pcy1oaWdobGlnaHQge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuaW1nLnByb2R1Y3QtaW1nIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59IiwiLnByb2R1Y3QtaW1nIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogYXV0bztcbiAgbWluLWhlaWdodDogMTYwcHg7XG59XG5cbi5wcm9kdWN0LWl0ZW1fX25hbWUge1xuICB3aWR0aDogMTAwJTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgcGFkZGluZzogMC4xNWVtIDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmFjdGlvbi1jb3VudCB7XG4gIHBhZGRpbmctcmlnaHQ6IDVweDtcbn1cblxuLnByb2R1Y3QtaXRlbV9fYWN0aW9ucyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3ctcmV2ZXJzZTtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xufVxuXG4ucHJvZHVjdC1pdGVtX19pbWFnZSB7XG4gIG1heC1oZWlnaHQ6IDE2MHB4O1xuICBvdmVyZmxvdzogaGlkZGVuO1xufVxuXG4ucHJvZHVjdC1pdGVtIHtcbiAgbWFyZ2luOiAxLjVlbSAwO1xufVxuXG5jbHItaWNvbi5pcy1zb2xpZC5pcy1oaWdobGlnaHQge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59XG5cbmltZy5wcm9kdWN0LWltZyB7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn0iXX0= */");
+            /* harmony default export */ __webpack_exports__["default"] = (".product-img {\n  width: 100%;\n  height: auto;\n  min-height: 160px;\n}\n\n.product-item__name {\n  width: 100%;\n  font-weight: 600;\n  padding: 0.15em 0;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.action-count {\n  padding-right: 5px;\n}\n\n.product-item__actions {\n  display: flex;\n  flex-direction: row-reverse;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n}\n\n.product-item__image {\n  max-height: 160px;\n  overflow: hidden;\n}\n\n.product-item {\n  margin: 1.5em 0;\n}\n\nclr-icon.is-solid.is-highlight {\n  cursor: pointer;\n}\n\nimg.product-img {\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvQzpcXFVzZXJzXFxhYmJ5LVxcRGVza3RvcFxcRGV2XFxqczJcXGpzMk1pZHRlcm0tV2ViQXBwL3NyY1xcYXBwXFxjb21wb25lbnRzXFxwcm9kdWN0LWRpc3BsYXlcXHByb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9wcm9kdWN0LWRpc3BsYXkvcHJvZHVjdC1kaXNwbGF5LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQVNBO0VBQ0ksV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtBQ1JKOztBRFdBO0VBQ0ksV0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSw4QkFBQTtBQ1JKOztBRFdBO0VBQ0ksa0JBQUE7QUNSSjs7QURZQTtFQUNJLGFBQUE7RUFDQSwyQkFBQTtFQUNBLG1CQUFBO0VBQ0EsOEJBQUE7RUFDQSxXQUFBO0FDVEo7O0FEYUE7RUFDSSxpQkFBQTtFQUNBLGdCQUFBO0FDVko7O0FEYUE7RUFDSSxlQUFBO0FDVko7O0FEYUE7RUFDSSxlQUFBO0FDVko7O0FEYUE7RUFDSSxlQUFBO0FDVkoiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3Byb2R1Y3QtZGlzcGxheS9wcm9kdWN0LWRpc3BsYXkuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL1RoZXJlIHdhcyBhIGxvdCBvZiBwbGF5aW5nIHdpdGggdGhlIHByb2R1Y3QtZGlzcGxheS5jb21wb25lbnQuIEkgd2Fzbid0IHN1cmUgaG93IEkgd2FudGVkIG15IHBpY3R1cmVzLiBJIHdvdWxkIGV2ZW50dWFsbHlcbi8vcmVhbGx5IGxpa2UgdG8gYXR0ZW1wdCBtYXNvbnJ5IHdpdGggbXkgcGhvdG9zIChodHRwczovL3d3dy5zaXRlcG9pbnQuY29tL3VuZGVyc3RhbmRpbmctbWFzb25yeS1sYXlvdXQvKSBidXQgSSBqdXN0IGNvdWxkbid0IFxuLy9maWd1cmUgaXQgb3V0LiBJdCB3YXMgZ29pbmcgdG8gYmUgdGhlIGxhc3QgdGhpbmcgSSBkaWQuIEkgYWxzbyB3YW50ZWQgdG8gZmlndXJlIG91dCBQaW50ZXJlc3QncyBuZXdlc3QgdXBkYXRlLCB3aGVyZVxuLy9hZnRlciB5b3UgcGluIHNvbWV0aGluZywgeW91IGFjdHVhbGx5IHNlZSBpdCBzd29vc2ggaW50byB5b3VyIGFjY291bnQgaW4gdGhlIHRvcCByaWdodCBjb3JuZXIuIEkgd291bGQgbG92ZSB0byBhdHRlbXB0IGFuIGFuaW1hdGlvbi5cblxuLnByb2R1Y3QtZGlzcGxheSB7XG5cbn1cblxuLnByb2R1Y3QtaW1ne1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogYXV0bztcbiAgICBtaW4taGVpZ2h0OiAxNjBweDtcbn1cblxuLnByb2R1Y3QtaXRlbV9fbmFtZSB7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICBwYWRkaW5nOiAuMTVlbSAwO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XG59XG5cbi5hY3Rpb24tY291bnR7XG4gICAgcGFkZGluZy1yaWdodDogNXB4O1xufVxuXG4vL2ZsZXgtZGlyZWN0aW9uIGhhcyBiZWNvbWUgb25lIG9mIG15IGZhdm9yaXRlIFNDU1MgdG9vbHMgdG8gZ2V0IG15IGl0ZW1zL3RleHQgd2hlcmUgSSB3YW50ZWQgdGhlbSB0byBnb1xuLnByb2R1Y3QtaXRlbV9fYWN0aW9uc3tcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGZsZXgtZGlyZWN0aW9uOiByb3ctcmV2ZXJzZTtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjtcbiAgICB3aWR0aDogMTAwJTtcbn1cblxuXG4ucHJvZHVjdC1pdGVtX19pbWFnZSB7XG4gICAgbWF4LWhlaWdodDogMTYwcHg7XG4gICAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLnByb2R1Y3QtaXRlbSB7XG4gICAgbWFyZ2luOiAxLjVlbSAwO1xufVxuXG5jbHItaWNvbi5pcy1zb2xpZC5pcy1oaWdobGlnaHQge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbn1cblxuaW1nLnByb2R1Y3QtaW1nIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG59IiwiLnByb2R1Y3QtaW1nIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogYXV0bztcbiAgbWluLWhlaWdodDogMTYwcHg7XG59XG5cbi5wcm9kdWN0LWl0ZW1fX25hbWUge1xuICB3aWR0aDogMTAwJTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgcGFkZGluZzogMC4xNWVtIDA7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2Vlbjtcbn1cblxuLmFjdGlvbi1jb3VudCB7XG4gIHBhZGRpbmctcmlnaHQ6IDVweDtcbn1cblxuLnByb2R1Y3QtaXRlbV9fYWN0aW9ucyB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiByb3ctcmV2ZXJzZTtcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuO1xuICB3aWR0aDogMTAwJTtcbn1cblxuLnByb2R1Y3QtaXRlbV9faW1hZ2Uge1xuICBtYXgtaGVpZ2h0OiAxNjBweDtcbiAgb3ZlcmZsb3c6IGhpZGRlbjtcbn1cblxuLnByb2R1Y3QtaXRlbSB7XG4gIG1hcmdpbjogMS41ZW0gMDtcbn1cblxuY2xyLWljb24uaXMtc29saWQuaXMtaGlnaGxpZ2h0IHtcbiAgY3Vyc29yOiBwb2ludGVyO1xufVxuXG5pbWcucHJvZHVjdC1pbWcge1xuICBjdXJzb3I6IHBvaW50ZXI7XG59Il19 */");
             /***/ 
         }),
         /***/ "./src/app/components/product-display/product-display.component.ts": 
@@ -1001,11 +1052,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             var AppService = /** @class */ (function () {
                 function AppService() {
                 }
+                //using local storage due to time constraints. Will NEVER do this in real life
                 AppService.prototype.setUser = function (user) {
-                    this.appUser = user;
+                    localStorage.setItem('user', JSON.stringify(user));
                 };
                 AppService.prototype.getUser = function () {
-                    return this.appUser;
+                    this.appUser = localStorage.getItem('user');
+                    return JSON.parse(this.appUser);
                 };
                 return AppService;
             }());
@@ -1075,6 +1128,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 ReduxStoreActions["AddToCart"] = "AddToCart";
                 ReduxStoreActions["UpdateCart"] = "UpdateCart";
                 ReduxStoreActions["ClearCart"] = "ClearCart";
+                ReduxStoreActions["Authenticated"] = "Authenticated";
+                ReduxStoreActions["StoreUser"] = "StoreUser";
+                ReduxStoreActions["RemoveUser"] = "RemoveUser";
             })(ReduxStoreActions || (ReduxStoreActions = {}));
             /***/ 
         }),
@@ -1099,7 +1155,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             var InitialState = {
                 cart: [],
                 totalCartQty: 0,
+                isAuthenticated: false,
                 showCart: false,
+                user: null,
                 lastUpdated: null
             };
             //This code controls the State of the application, in regards to what the 
@@ -1128,7 +1186,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                             //this is how I ended up putting the qty in front of the shopping cart.
                             //using the the state's cart, we find the parameter x, x being the ProductID,
                             //and it must match the action product.productID from above
-                            var product = state.cart.find(function (x) { return x.productID == action.product.productID; });
+                            var product = state.cart.find(function (x) { return x.docId == action.product.docId; });
                             //these if statements controls the cartQty and the state of the totalCartQty
                             //these reducers returns the new state, and internally updates the state
                             //the store will internally update the state across the app
@@ -1173,6 +1231,24 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                         return Object(tassign__WEBPACK_IMPORTED_MODULE_2__["tassign"])(state, {
                             cart: [],
                             totalCartQty: 0,
+                            lastUpdated: new Date()
+                        });
+                    case _actions__WEBPACK_IMPORTED_MODULE_1__["ReduxStoreActions"].Authenticated:
+                        console.log(state);
+                        return Object(tassign__WEBPACK_IMPORTED_MODULE_2__["tassign"])(state, {
+                            isAuthenticated: action.body.isAuthenticated,
+                            lastUpdated: new Date()
+                        });
+                    case _actions__WEBPACK_IMPORTED_MODULE_1__["ReduxStoreActions"].StoreUser:
+                        console.log(state);
+                        return Object(tassign__WEBPACK_IMPORTED_MODULE_2__["tassign"])(state, {
+                            user: action.body.user,
+                            lastUpdated: new Date()
+                        });
+                    case _actions__WEBPACK_IMPORTED_MODULE_1__["ReduxStoreActions"].RemoveUser:
+                        console.log(state);
+                        return Object(tassign__WEBPACK_IMPORTED_MODULE_2__["tassign"])(state, {
+                            user: null,
                             lastUpdated: new Date()
                         });
                 }
@@ -1228,17 +1304,99 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function () { return DashboardComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+            /* harmony import */ var src_app_service_app_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/app.service */ "./src/app/service/app.service.ts");
             var DashboardComponent = /** @class */ (function () {
-                function DashboardComponent() {
+                function DashboardComponent(route, db, appService) {
+                    this.route = route;
+                    this.db = db;
+                    this.appService = appService;
+                    this.likeTotal = 0;
+                    this.dislikeTotal = 0;
+                    this.badgeArray = [];
+                    this.dislikeBadgeArray = [];
+                    this.forumData = [];
+                    this.user = this.appService.getUser();
+                    this.getForumData();
+                    this.getForumDataWithImages();
                 }
                 DashboardComponent.prototype.ngOnInit = function () { };
+                //function to subscribe to the changes happening on this page. Making a request to Firebase for data
+                DashboardComponent.prototype.getForumData = function () {
+                    var _this = this;
+                    var data = this.db.collection("forums", function (ref) { return ref.where('userDocID', '==', _this.user.docId); })
+                        .snapshotChanges();
+                    //subscribing to the result of the query to get actual data out of it
+                    data.subscribe(function (result) {
+                        console.log(result);
+                        _this.totalLikes(result);
+                        _this.calculateBadgeCounts(result);
+                        _this.forumData = result.map(function (item) {
+                            console.log(item.payload.doc.id);
+                            console.log(item.payload.doc.data());
+                            item.docId = item.payload.doc.id;
+                            return item;
+                        });
+                    });
+                };
+                //function to add up the total likes and the total dislikes on the comments
+                DashboardComponent.prototype.totalLikes = function (data) {
+                    var _this = this;
+                    data.forEach(function (item) {
+                        _this.likeTotal += item.payload.doc.data().likes;
+                        _this.dislikeTotal += item.payload.doc.data().dislikes;
+                    });
+                };
+                //this function counts the total likes and dislikes to assign badges.
+                DashboardComponent.prototype.calculateBadgeCounts = function (data) {
+                    var totalLikeCount = 0;
+                    var totalDislikeCount = 0;
+                    data.forEach(function (item) {
+                        console.log(item.payload.doc);
+                        totalLikeCount += item.payload.doc.data().likes;
+                        totalDislikeCount += item.payload.doc.data().dislikes;
+                    });
+                    console.log(totalLikeCount);
+                    var badgesTotal = Math.ceil(totalLikeCount / 5) * 5;
+                    console.log(badgesTotal);
+                    var badgesDislikeTotal = Math.ceil(totalDislikeCount / 5) * 5;
+                    this.addItemsToBadgeArray(badgesTotal, badgesDislikeTotal);
+                };
+                //create a function to add the items to the badge array, this way I can assign badges
+                DashboardComponent.prototype.addItemsToBadgeArray = function (likeTotal, dislikeTotal) {
+                    for (var i = likeTotal; i > 0; i--) {
+                        if (i % 5) {
+                        }
+                        else {
+                            this.badgeArray.push(i);
+                        }
+                    }
+                    for (var i = dislikeTotal; i > 0; i--) {
+                        if (i % 5) {
+                        }
+                        else {
+                            this.dislikeBadgeArray.push(i);
+                        }
+                    }
+                    console.log(this.badgeArray);
+                    console.log(this.dislikeBadgeArray);
+                };
+                DashboardComponent.prototype.getForumDataWithImages = function () {
+                };
                 return DashboardComponent;
             }());
+            DashboardComponent.ctorParameters = function () { return [
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+                { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"] },
+                { type: src_app_service_app_service__WEBPACK_IMPORTED_MODULE_4__["AppService"] }
+            ]; };
             DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'dashboard',
                     template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./dashboard.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/admin/dashboard/dashboard.component.html")).default
                 })
+                //setting up the variables for the Dashboard page
             ], DashboardComponent);
             /***/ 
         }),
@@ -1302,7 +1460,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     // public zzz: any[];
                     // initialized variable
                     this.openDropdown = false;
+                    this.opened = false;
                     this.items = [];
+                    //this loop sets up the dialogue box to let users know what to do on the website
+                    var dialogStatus = localStorage.getItem("first_visit");
+                    if (dialogStatus === "true") {
+                    }
+                    else {
+                        this.opened = true;
+                    }
                 }
                 HomeComponent.prototype.ngOnInit = function () {
                     this.getDisplayProducts();
@@ -1315,6 +1481,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     this.products.subscribe(function (result) {
                         console.log(result);
                         _this.items = result.map(function (item) {
+                            console.log(item.payload.doc.id);
                             item.docId = item.payload.doc.id;
                             return item;
                         });
@@ -1325,6 +1492,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                 HomeComponent.prototype.productSelected = function (data) {
                     var _this = this;
                     console.log(data);
+                    console.log(data.item.docId);
+                    console.log(data.item.payload.doc.data());
                     if (data.type === "views") {
                         this.db.collection('/products').doc(data.item.docId).update({
                             "views": data.item.payload.doc.data().views += 1
@@ -1353,19 +1522,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     this.toggleFilterBtn();
                     switch (type) {
                         case 0:
-                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('productName', 'asc'); }).valueChanges();
+                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('productName', 'asc'); }).snapshotChanges();
                             this.applyProductsToList(this.products);
                             break;
                         case 1:
-                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('productName', 'desc'); }).valueChanges();
+                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('productName', 'desc'); }).snapshotChanges();
                             this.applyProductsToList(this.products);
                             break;
                         case 2:
-                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('likes', 'desc'); }).valueChanges();
+                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('likes', 'desc'); }).snapshotChanges();
                             this.applyProductsToList(this.products);
                             break;
                         case 3:
-                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('views', 'desc'); }).valueChanges();
+                            this.products = this.db.collection('products', function (ref) { return ref.orderBy('views', 'desc'); }).snapshotChanges();
                             this.applyProductsToList(this.products);
                             break;
                     }
@@ -1374,13 +1543,22 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     var _this = this;
                     products.subscribe(function (result) {
                         console.log(result);
-                        _this.items = result;
+                        _this.items = result.map(function (item) {
+                            console.log(item.payload.doc.id);
+                            item.docId = item.payload.doc.id;
+                            return item;
+                        });
                     }, function (error) {
                         console.log(error);
                     });
                 };
                 HomeComponent.prototype.toggleFilterBtn = function () {
                     this.openDropdown = !this.openDropdown;
+                };
+                //this function changes the variable opened to false so it closes and doesn't reopen using Local Storage
+                HomeComponent.prototype.closedDialog = function () {
+                    localStorage.setItem("first_visit", "true");
+                    this.opened = false;
                 };
                 return HomeComponent;
             }());
@@ -1393,6 +1571,115 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
                     template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/home/home.component.html")).default
                 })
             ], HomeComponent);
+            /***/ 
+        }),
+        /***/ "./src/app/views/image/image.component.ts": 
+        /*!************************************************!*\
+          !*** ./src/app/views/image/image.component.ts ***!
+          \************************************************/
+        /*! exports provided: ImageComponent */
+        /***/ (function (module, __webpack_exports__, __webpack_require__) {
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImageComponent", function () { return ImageComponent; });
+            /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+            /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+            /* harmony import */ var src_app_service_app_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/service/app.service */ "./src/app/service/app.service.ts");
+            var ImageComponent = /** @class */ (function () {
+                //default class constructor, the firebase connection and the parameter of the route to get the info out.
+                //pulling the imageID from the Angular Route Param, which is used to make a request to get the product
+                //details.
+                function ImageComponent(route, db, appService) {
+                    var _this = this;
+                    this.route = route;
+                    this.db = db;
+                    this.appService = appService;
+                    this.forumData = [];
+                    this.route.params.subscribe(function (parms) {
+                        _this.imageId = parms.id;
+                        _this.getForumData(_this.imageId);
+                        _this.imageData = _this.db.collection('products', function (ref) { return ref.where('productID', '==', _this.imageId).limit(1); })
+                            .snapshotChanges();
+                        _this.user = _this.appService.getUser();
+                        console.log(_this.user);
+                    });
+                }
+                //this is setting up listening for the changes to the database
+                ImageComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    console.log(this.imageData);
+                    this.imageData.subscribe(function (result) {
+                        _this.product = result[0].payload.doc.data();
+                    });
+                };
+                //this function is setting up how to push a new doc to the database
+                ImageComponent.prototype.submitForum = function (f) {
+                    console.log(f);
+                    console.log(this.user);
+                    var newDoc = {
+                        comments: f.value.comment,
+                        dislikes: 0,
+                        likes: 0,
+                        photoDocID: this.imageId,
+                        rating: 0,
+                        userDocID: this.user.docId
+                    };
+                    this.db.collection("forums").add(newDoc);
+                    console.log(newDoc);
+                    f.reset();
+                };
+                //this function is setting up 
+                ImageComponent.prototype.getForumData = function (id) {
+                    var _this = this;
+                    var data = this.db.collection("forums", function (ref) { return ref.where('photoDocID', '==', id); })
+                        .snapshotChanges();
+                    data.subscribe(function (result) {
+                        console.log(result);
+                        _this.forumData = result.map(function (item) {
+                            console.log(item.payload.doc.id);
+                            console.log(item.payload.doc.data());
+                            item.docId = item.payload.doc.id;
+                            return item;
+                        });
+                    });
+                };
+                //adding likes to the count in the database
+                ImageComponent.prototype.addLikeToForumComment = function (item) {
+                    // add new like to previous count and update in database
+                    console.log(item);
+                    this.db.collection('forums').doc(item.docId).update({ likes: item.payload.doc.data().likes += 1 });
+                    this.getForumData(this.imageId);
+                };
+                //adding dislikes to the count in the database
+                ImageComponent.prototype.addDislikeToForumComment = function (item) {
+                    // add new dislike to prevous count and update in database.
+                    console.log(item);
+                    var dislikes = item.payload.doc.data().dislikes;
+                    this.db.collection('forums').doc(item.docId).update({ dislikes: dislikes += 1 });
+                    this.getForumData(this.imageId);
+                };
+                ImageComponent.prototype.setStarRating = function (rating, item) {
+                    // calculate previous rating with new rating to determine average. update in database
+                    console.log(rating);
+                    console.log(item);
+                    this.db.collection('forums').doc(item.docId).update({ rating: rating });
+                    this.getForumData(this.imageId);
+                };
+                return ImageComponent;
+            }());
+            ImageComponent.ctorParameters = function () { return [
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+                { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_3__["AngularFirestore"] },
+                { type: src_app_service_app_service__WEBPACK_IMPORTED_MODULE_4__["AppService"] }
+            ]; };
+            ImageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+                Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+                    selector: 'image',
+                    template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./image.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/views/image/image.component.html")).default
+                })
+            ], ImageComponent);
             /***/ 
         }),
         /***/ "./src/app/views/login/login.component.ts": 
@@ -1408,17 +1695,39 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
             /* harmony import */ var src_app_service_app_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/service/app.service */ "./src/app/service/app.service.ts");
             /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+            /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
+            /* harmony import */ var src_app_store_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/store/actions */ "./src/app/store/actions.ts");
+            /* harmony import */ var _angular_redux_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular-redux/store */ "./node_modules/@angular-redux/store/fesm2015/angular-redux-store.js");
             var LoginComponent = /** @class */ (function () {
-                function LoginComponent(appService, router) {
+                function LoginComponent(appService, router, db, ngRedux) {
                     this.appService = appService;
                     this.router = router;
+                    this.db = db;
+                    this.ngRedux = ngRedux;
                     this.formModel = {};
+                    this.error = '';
                 }
                 LoginComponent.prototype.ngOnInit = function () { };
                 LoginComponent.prototype.login = function (form) {
-                    // fake way
-                    this.appService.setUser(form.value);
-                    this.router.navigate(['/admin/dashboard']);
+                    var _this = this;
+                    this.user = this.db.collection('users', function (ref) { return ref.where('email', '==', form.value.email).limit(1); })
+                        .snapshotChanges();
+                    this.user.subscribe(function (result) {
+                        if (result[0].payload.doc.data().password === form.value.password) {
+                            _this.error = '';
+                            var user = {
+                                data: result[0].payload.doc.data(),
+                                docId: result[0].payload.doc.id
+                            };
+                            _this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_5__["ReduxStoreActions"].Authenticated, body: { isAuthenticated: true } });
+                            _this.ngRedux.dispatch({ type: src_app_store_actions__WEBPACK_IMPORTED_MODULE_5__["ReduxStoreActions"].StoreUser, body: { user: user } });
+                            _this.appService.setUser(user);
+                            _this.router.navigate(['/admin/dashboard']);
+                        }
+                        else {
+                            _this.error = 'Invalid user credentials. Please try again.';
+                        }
+                    });
                     // make request to Firebase DB with a WHERE caluse. searching for existing user email.
                     // if user is found return the record and compare passwords of user to database
                     // if match then set the app user in the serivce as shown above
@@ -1428,7 +1737,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             }());
             LoginComponent.ctorParameters = function () { return [
                 { type: src_app_service_app_service__WEBPACK_IMPORTED_MODULE_2__["AppService"] },
-                { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+                { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+                { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_4__["AngularFirestore"] },
+                { type: _angular_redux_store__WEBPACK_IMPORTED_MODULE_6__["NgRedux"] }
             ]; };
             LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1449,12 +1760,29 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewsletterComponent", function () { return NewsletterComponent; });
             /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
             /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+            /* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/es2015/index.js");
             var NewsletterComponent = /** @class */ (function () {
-                function NewsletterComponent() {
+                function NewsletterComponent(db) {
+                    this.db = db;
+                    //formModel for view
+                    this.formModel = {};
                 }
                 NewsletterComponent.prototype.ngOnInit = function () { };
+                NewsletterComponent.prototype.submitForm = function (form) {
+                    var _this = this;
+                    console.log(form);
+                    this.db.collection("/users").add(form.value).then(function () {
+                        _this.resetForm(form);
+                    });
+                };
+                NewsletterComponent.prototype.resetForm = function (f) {
+                    f.reset();
+                };
                 return NewsletterComponent;
             }());
+            NewsletterComponent.ctorParameters = function () { return [
+                { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_2__["AngularFirestore"] }
+            ]; };
             NewsletterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
                 Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
                     selector: 'newsletter',
